@@ -1,3 +1,9 @@
+[btcprice]
+command=cat /tmp/btcprice.txt
+interval=30
+color=#82b741
+label=💰
+
 [cputemp]
 command=/home/nic/Scripts/i3temp.sh
 interval=60

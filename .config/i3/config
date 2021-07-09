@@ -164,6 +164,7 @@ exec setxkbmap -layout no
 exec_always notify-send "Welcome back, Nicolai"
 exec_always picom
 exec_always dunst
+exec_always /home/nic/Scripts/btcprice.sh
 
 gaps outer 10
 gaps inner 15

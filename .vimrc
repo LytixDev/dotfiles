@@ -22,3 +22,6 @@ let g:netrw_banner = 0
 colorscheme gruvbox
 set background=dark
 hi Normal guibg=NONE ctermbg=NONE
+
+set noerrorbells
+set vb t_vb=

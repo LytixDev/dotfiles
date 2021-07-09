@@ -8,4 +8,4 @@
 alias ls='ls --color=auto'
 PS1='[\u@\h \W]\$ '
 
-PATH=$PATH:/home/nic/Scripts/
+PATH=$PATH:/home/nic/Scripts/:/usr/local/bin/geckodriver
