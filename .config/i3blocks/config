@@ -1,6 +1,7 @@
 [btcprice]
-command=cat /tmp/btcprice.txt
-interval=30
+command=/home/nic/Scripts/i3checkbtc.sh
+interval=once
+signal=30
 color=#82b741
 label=💰
 
@@ -18,23 +19,25 @@ label=🧠
 
 [weather]
 command=/home/nic/Scripts/i3weather.sh
-interval=3600
+interval=1800
 color=#A4C2F4
 label=🌅
 
 [backlight]
 command=/home/nic/Scripts/i3backlight.sh
-interval=1
+interval=once
+signal=20
 label=💡
 
 [volume]
 command=/home/nic/Scripts/i3volume.sh
-interval=1
+interval=once
+signal=10
 label=🔉
 
 [changevolume]
 command=/home/nic/Scripts/i3changevolume.sh
-interval=3600
+interval=once
 label=📢
 
 [battery]

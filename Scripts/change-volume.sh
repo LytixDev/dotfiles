@@ -9,3 +9,4 @@ elif [[ $new_vol -le 0 ]]; then
 fi
 
 amixer set Master $new_vol%
+pkill -SIGRTMIN+10 i3blocks

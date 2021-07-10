@@ -9,3 +9,4 @@ elif [[ $new_val -le 0 ]]; then
 fi
 
 xbacklight -set $new_val
+pkill -SIGRTMIN+20 i3blocks
