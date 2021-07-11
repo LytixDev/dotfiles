@@ -45,7 +45,12 @@ command=/home/nic/Scripts/i3battery.sh
 interval=60
 label=🔋
 
-[time]
-command=/home/nic/Scripts/i3datetime.sh
-interval=1
+[date]
+command=/home/nic/Scripts/i3date.sh
+interval=60
 label=📅
+
+[time]
+command=/home/nic/Scripts/i3time.sh
+interval=1
+label=⌚
