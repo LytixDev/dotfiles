@@ -139,10 +139,9 @@ bar {
 }
 
 # My personal changes
-exec_always feh --bg-fill ~/Pictures/bgnormal.png
+exec_always feh --bg-fill /home/nic/Pictures/wallpaper3.png
 bindsym $mod+b exec firefox
 set $i3lockwall sh /home/nic/Scripts/lock.sh
-bindsym $mod+Ctrl+Shift+l exec --no-startup-id $i3lockwall
 
 # shutdown / restart / suspend...
 set $mode_system System (l) lock, (e) logout, (r) reboot, (CTRL+s) shutdown

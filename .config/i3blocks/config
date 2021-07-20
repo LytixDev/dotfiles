@@ -35,11 +35,6 @@ interval=once
 signal=10
 label=🔉
 
-[changevolume]
-command=/home/nic/Scripts/i3changevolume.sh
-interval=once
-label=📢
-
 [battery]
 command=/home/nic/Scripts/i3battery.sh
 interval=60
