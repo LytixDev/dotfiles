@@ -16,6 +16,9 @@ call plug#begin('~/.vim/plugged')
 
 Plug 'vim-scripts/AutoComplPop'
 Plug 'morhetz/gruvbox'
+Plug 'junegunn/rainbow_parentheses.vim'
+Plug 'itchyny/lightline.vim'
+Plug 'preservim/nerdtree'
 
 call plug#end()
 let g:netrw_banner = 0
@@ -25,3 +28,5 @@ hi Normal guibg=NONE ctermbg=NONE
 
 set noerrorbells
 set vb t_vb=
+set laststatus=2
+map <C-o> :NERDTreeToggle<CR>
