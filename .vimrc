@@ -1,7 +1,8 @@
 syntax on
 
-vnoremap <C-c> "+y
+vnoremap <C-y> "+y
 map <C-v> "+p
+
 set tabstop=4
 set shiftwidth=4
 set smartindent
@@ -28,5 +29,8 @@ hi Normal guibg=NONE ctermbg=NONE
 
 set noerrorbells
 set vb t_vb=
+
 set laststatus=2
+set noshowmode
+let g:lightline = {'colorscheme': 'powerline'}
 map <C-o> :NERDTreeToggle<CR>
