@@ -1,5 +1,6 @@
-# shortcut
+# shortcuts
 set $exnosup exec --no-startup-id
+set $exallnosup exec_always --no-startup-id
 
 # set mod key to windows key
 set $mod Mod4
@@ -118,7 +119,7 @@ bar {
 }
 
 # wallpaper
-exec_always feh --bg-fill /home/nic/Pictures/wallpaper1.png
+$exallnosup feh --bg-fill /home/nic/Pictures/wallpaper1.png
 
 # i3lock script
 set $i3lockwall sh /home/nic/Scripts/lock.sh
@@ -139,15 +140,15 @@ mode "$mode_system" {
 bindsym $mod+Ctrl+q mode "$mode_system"
 
 # keyboard layout
-exec_always setxkbmap -layout no
+$exallnosup setxkbmap -layout no
 
 # for memes
-exec_always notify-send "Welcome back, Nicolai"
+$exallnosup notify-send "Welcome back, Nicolai"
 
 # startup programs
 $exnosup picom
 $exnosup dunst
-exec_always /home/nic/Scripts/btcprice.sh
+$exallnosup /home/nic/Scripts/btcprice.sh
 
 # gaps
 gaps outer 10
@@ -155,10 +156,10 @@ gaps inner 15
 new_window pixel 3
 
 # sound
-bindsym $mod+Shift+u exec /home/nic/Scripts/change-volume.sh 5 
-bindsym $mod+Shift+d exec /home/nic/Scripts/change-volume.sh -5
-bindsym $mod+m exec /home/nic/Scripts/toggle-volume.sh
+bindsym $mod+Shift+u $exnosup /home/nic/Scripts/change-volume.sh 5 
+bindsym $mod+Shift+d $exnosup /home/nic/Scripts/change-volume.sh -5
+bindsym $mod+m $exnosup /home/nic/Scripts/toggle-volume.sh
 
 # backlight
-bindsym $mod+Ctrl+u exec /home/nic/Scripts/change-backlight.sh 10
-bindsym $mod+Ctrl+d exec /home/nic/Scripts/change-backlight.sh -10
+bindsym $mod+Ctrl+u $exnosup /home/nic/Scripts/change-backlight.sh 10
+bindsym $mod+Ctrl+d $exnosup /home/nic/Scripts/change-backlight.sh -10
