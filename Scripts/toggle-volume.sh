@@ -1,1 +1,1 @@
-amixer sset Master toggle
+amixer -q -D pulse sset Master toggle
