@@ -1,7 +1,7 @@
 syntax on
 
-vnoremap <C-y> "+y
-map <C-v> "+p
+vnoremap <C-c> "+y
+map <C-p> "+p
 
 set tabstop=4
 set shiftwidth=4

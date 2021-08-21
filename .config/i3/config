@@ -6,7 +6,7 @@ set $exallnosup exec_always --no-startup-id
 set $mod Mod4
 
 # font bar
-font pango:monospace 15
+font pango:monospace 16
 
 # xss-lock grabs a logind suspend inhibit lock and will use i3lock to lock the
 # screen before suspend. Use loginctl lock-session to lock your screen.
@@ -139,6 +139,9 @@ mode "$mode_system" {
 
 bindsym $mod+Ctrl+q mode "$mode_system"
 
+# set res of main display
+$exnosup /home/nic/Scripts/dmonitors.sh
+
 # keyboard layout
 $exallnosup setxkbmap -layout no
 
@@ -156,10 +159,10 @@ gaps inner 15
 new_window pixel 3
 
 # sound
-bindsym $mod+Shift+u $exnosup /home/nic/Scripts/change-volume.sh 5 
-bindsym $mod+Shift+d $exnosup /home/nic/Scripts/change-volume.sh -5
+bindsym $mod+u $exnosup /home/nic/Scripts/change-volume.sh 5 
+bindsym $mod+i $exnosup /home/nic/Scripts/change-volume.sh -5
 bindsym $mod+m $exnosup /home/nic/Scripts/toggle-volume.sh
 
 # backlight
 bindsym $mod+Ctrl+u $exnosup /home/nic/Scripts/change-backlight.sh 10
-bindsym $mod+Ctrl+d $exnosup /home/nic/Scripts/change-backlight.sh -10
+bindsym $mod+Ctrl+i $exnosup /home/nic/Scripts/change-backlight.sh -10
