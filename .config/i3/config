@@ -7,6 +7,7 @@ set $mod Mod4
 
 # font bar
 font pango:monospace 16
+#font pango:monospace 28
 
 # xss-lock grabs a logind suspend inhibit lock and will use i3lock to lock the
 # screen before suspend. Use loginctl lock-session to lock your screen.
@@ -119,7 +120,7 @@ bar {
 }
 
 # wallpaper
-$exallnosup feh --bg-fill /home/nic/Pictures/wallpaper1.png
+$exallnosup feh --bg-fill /home/nic/Pictures/wallpaper3.png
 
 # i3lock script
 set $i3lockwall sh /home/nic/Scripts/lock.sh
@@ -140,7 +141,7 @@ mode "$mode_system" {
 bindsym $mod+Ctrl+q mode "$mode_system"
 
 # set res of main display
-$exnosup /home/nic/Scripts/dmonitors.sh
+#$exnosup /home/nic/Scripts/dmonitors.sh
 
 # keyboard layout
 $exallnosup setxkbmap -layout no
