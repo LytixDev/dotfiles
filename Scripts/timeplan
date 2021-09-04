@@ -1,0 +1,10 @@
+#!/bin/sh
+
+a="https://tp.uio.no/ntnu/timeplan/?id=22422&type=student&week="
+b="&weekTo=48&ar=2021"
+
+uke=$(uke)
+
+link="$a$uke$b"
+
+firefox $link

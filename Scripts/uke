@@ -1,4 +1,3 @@
 #!/bin/sh
 
-echo "uke"
 curl --silent https://ukenr.no/ | grep 'id="ugenr"' | sed s/.*Uke\ // | sed s/\<.*//
