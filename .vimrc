@@ -13,6 +13,7 @@ set nobackup
 set incsearch
 set complete+=kspell
 set completeopt=menuone,longest
+
 call plug#begin('~/.vim/plugged')
 
 Plug 'vim-scripts/AutoComplPop'
@@ -22,6 +23,7 @@ Plug 'itchyny/lightline.vim'
 Plug 'preservim/nerdtree'
 
 call plug#end()
+
 let g:netrw_banner = 0
 colorscheme gruvbox
 set background=dark
@@ -34,3 +36,5 @@ set laststatus=2
 set noshowmode
 let g:lightline = {'colorscheme': 'powerline'}
 map <C-o> :NERDTreeToggle<CR>
+
+autocmd BufNewFile,BufRead * setlocal formatoptions-=cro

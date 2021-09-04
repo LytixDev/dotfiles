@@ -120,7 +120,7 @@ bar {
 }
 
 # wallpaper
-$exallnosup feh --bg-fill /home/nic/Pictures/wallpaper3.png
+$exallnosup feh --bg-fill /home/nic/Pictures/wallpaper4.png
 
 # i3lock script
 set $i3lockwall sh /home/nic/Scripts/lock.sh
@@ -155,8 +155,12 @@ $exnosup dunst
 $exallnosup /home/nic/Scripts/btcprice.sh
 
 # gaps
-gaps outer 10
-gaps inner 15
+#gaps outer 10
+#gaps inner 15
+
+gaps outer 0
+gaps inner 0
+
 new_window pixel 3
 
 # sound
