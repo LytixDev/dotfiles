@@ -1,0 +1,14 @@
+#!/bin/sh
+
+main="/dev/sda2"
+
+data=$(df -h | grep $main)
+
+case $BLOCK_BUTTON in
+		1)
+			notify-send "Storage" "$data"
+			;;
+esac
+
+echo $data | cut -d " " -f 5
+

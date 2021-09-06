@@ -8,20 +8,23 @@ label=💰
 [cputemp]
 command=/home/nic/Scripts/i3temp.sh
 interval=60
-color=#FFDD99
 label=💻
-
-[memory]
-command=/home/nic/Scripts/i3mem.sh
-interval=60
-color=#FFDD99
-label=🧠
 
 [weather]
 command=/home/nic/Scripts/i3weather.sh
 interval=1800
 color=#A4C2F4
 label=🌅
+
+[memory]
+command=/home/nic/Scripts/i3mem.sh
+interval=60
+label=🧠
+[storage]
+
+command=/home/nic/Scripts/i3storage
+interval=3600
+label=💾
 
 [backlight]
 command=/home/nic/Scripts/i3backlight.sh
