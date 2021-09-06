@@ -120,7 +120,11 @@ bar {
 }
 
 # wallpaper
-$exallnosup feh --bg-fill /home/nic/Pictures/wallpaper4.png
+set $wallpaper /home/nic/Pictures/wallpaper6.png
+set $wallpaper2 /home/nic/Pictures/waifu.png
+$exallnosup feh --bg-fill $wallpaper
+bindsym $mod+p $exnosup feh --bg-fill $wallpaper
+bindsym $mod+o $exnosup feh --bg-fill $wallpaper2
 
 # i3lock script
 set $i3lockwall sh /home/nic/Scripts/lock.sh

@@ -8,3 +8,4 @@ uke=$(uke)
 link="$a$uke$b"
 
 firefox $link
+echo $link

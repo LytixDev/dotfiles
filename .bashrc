@@ -6,7 +6,7 @@
 [[ $- != *i* ]] && return
 
 alias ls='ls --color=auto'
-PS1='[\u@\h \W]\$ '
+PS1='[\u \W]\$ '
 
 PATH=$PATH:/home/nic/Scripts/:/usr/local/bin/geckodriver:/home/nic/stpwm:/home/nic/.local/bin
 export EDITOR=/usr/bin/vim
