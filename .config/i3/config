@@ -127,7 +127,7 @@ bindsym $mod+p $exnosup feh --bg-fill $wallpaper
 bindsym $mod+o $exnosup feh --bg-fill $wallpaper2
 
 # i3lock script
-set $i3lockwall sh /home/nic/Scripts/lock.sh
+set $i3lockwall sh /home/nic/Scripts/lock
 
 # shutdown / restart / suspend...
 set $mode_system System (l) lock, (e) logout, (r) reboot, (h) hibernate, (CTRL+s) shutdown
@@ -145,7 +145,7 @@ mode "$mode_system" {
 bindsym $mod+Ctrl+q mode "$mode_system"
 
 # set res of main display
-#$exnosup /home/nic/Scripts/dmonitors.sh
+#$exnosup /home/nic/Scripts/dmonitors
 
 # keyboard layout
 $exallnosup setxkbmap -layout no
@@ -156,11 +156,11 @@ $exallnosup notify-send "Welcome back, Nicolai"
 # startup programs
 $exnosup picom
 $exnosup dunst
-$exallnosup /home/nic/Scripts/btcprice.sh
+$exallnosup /home/nic/Scripts/btcprice
 
 # gaps
 #gaps outer 10
-#gaps inner 15
+#gaps inner 10
 
 gaps outer 0
 gaps inner 0
@@ -168,10 +168,10 @@ gaps inner 0
 new_window pixel 3
 
 # sound
-bindsym $mod+u $exnosup /home/nic/Scripts/change-volume.sh 5 
-bindsym $mod+i $exnosup /home/nic/Scripts/change-volume.sh -5
-bindsym $mod+m $exnosup /home/nic/Scripts/toggle-volume.sh
+bindsym $mod+u $exnosup /home/nic/Scripts/change-volume 5 
+bindsym $mod+i $exnosup /home/nic/Scripts/change-volume -5
+bindsym $mod+m $exnosup /home/nic/Scripts/toggle-volume
 
 # backlight
-bindsym $mod+Ctrl+u $exnosup /home/nic/Scripts/change-backlight.sh 10
-bindsym $mod+Ctrl+i $exnosup /home/nic/Scripts/change-backlight.sh -10
+bindsym $mod+Ctrl+u $exnosup /home/nic/Scripts/change-backlight 10
+bindsym $mod+Ctrl+i $exnosup /home/nic/Scripts/change-backlight -10

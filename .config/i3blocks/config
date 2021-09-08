@@ -1,54 +1,61 @@
+[stonkvalue]
+command=/home/nic/Scripts/stonks/stonkprice.sh
+interval=once
+signal=40
+color=#82b741
+label=💵
+
 [btcprice]
-command=/home/nic/Scripts/i3checkbtc.sh
+command=/home/nic/Scripts/i3checkbtc
 interval=once
 signal=30
 color=#82b741
 label=💰
 
-[cputemp]
-command=/home/nic/Scripts/i3temp.sh
-interval=60
-label=💻
-
 [weather]
-command=/home/nic/Scripts/i3weather.sh
+command=/home/nic/Scripts/i3weather
 interval=1800
 color=#A4C2F4
 label=🌅
 
+[cputemp]
+command=/home/nic/Scripts/i3temp
+interval=60
+label=💻
+
 [memory]
-command=/home/nic/Scripts/i3mem.sh
+command=/home/nic/Scripts/i3mem
 interval=60
 label=🧠
-[storage]
 
+[storage]
 command=/home/nic/Scripts/i3storage
 interval=3600
 label=💾
 
 [backlight]
-command=/home/nic/Scripts/i3backlight.sh
+command=/home/nic/Scripts/i3backlight
 interval=once
 signal=20
 label=💡
 
 [volume]
-command=/home/nic/Scripts/i3volume.sh
+command=/home/nic/Scripts/i3volume
 interval=once
 signal=10
 label=🔉
 
 [battery]
-command=/home/nic/Scripts/i3battery.sh
+command=/home/nic/Scripts/i3battery
 interval=60
 label=🔋
 
 [date]
-command=/home/nic/Scripts/i3date.sh
+command=/home/nic/Scripts/i3date
 interval=60
 label=📅
 
 [time]
-command=/home/nic/Scripts/i3time.sh
+command=/home/nic/Scripts/i3time
 interval=1
 label=⌚
