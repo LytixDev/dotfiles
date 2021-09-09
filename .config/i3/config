@@ -23,6 +23,8 @@ floating_modifier $mod
 # keybindings
 bindsym $mod+Return $exnosup kitty
 bindsym $mod+b $exnosup firefox
+bindsym $mod+c $exnosup chromium
+bindsym $mod+s $exnosup /home/nic/Scripts/screenshot
 bindsym $mod+q kill
 bindsym $mod+d $exnosup i3-dmenu-desktop
 

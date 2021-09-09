@@ -57,5 +57,5 @@ label=📅
 
 [time]
 command=/home/nic/Scripts/i3time
-interval=1
+interval=30
 label=⌚
