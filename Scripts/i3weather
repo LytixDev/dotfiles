@@ -7,4 +7,4 @@ case $BLOCK_BUTTON in
 			;;
 esac
 
-curl -Ss 'https://wttr.in?0&T&Q' | cut -c 16- | head -2 | awk "/^\s[0-9]/" | sed "s/\s//g"
+curl -Ss 'https://wttr.in?0&T&Q' | cut -c 16- | head -2 | awk "/.*[0-9]/" | sed "s/\s//g; s/(.*)//"

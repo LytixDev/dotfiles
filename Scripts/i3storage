@@ -6,7 +6,8 @@ data=$(df -h | grep $main)
 
 case $BLOCK_BUTTON in
 		1)
-			notify-send "Storage" "$data"
+			info="mount,            total, used, free, %"
+			notify-send "Storage" "$info\n$data"
 			;;
 esac
 
