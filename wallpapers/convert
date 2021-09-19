@@ -1,0 +1,8 @@
+#!/bin/sh
+
+
+for file in *.jpg; do
+	filename=$(echo $file | sed "s/\.jpg//g")
+	convert $file $filename.png
+	rm $file
+done

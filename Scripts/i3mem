@@ -9,12 +9,6 @@ case $BLOCK_BUTTON in
 			;;
 esac
 
-simplified=$(echo $mem | sed 's/Gi//g; s/Mi//g; s/\.//g')
-res=$(echo $simplified | bc -l | sed "s/\.//" | cut -b 1,2)
-
-if echo $mem | grep -q "Mi" ; then
-	res="$(echo $res | cut -b 1)%"
-	echo $res
-else
-	echo $res%
-fi
+mem2=$(free -m | awk '/^Mem:/ {print $3 "/" $2}')
+final=$(echo $mem2 | bc -l | cut -b 2-3 | sed 's/^0//')
+echo "$final%"

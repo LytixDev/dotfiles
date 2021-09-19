@@ -6,7 +6,6 @@ from datetime import date
 def main():
     cur_date = date.today()
     rating = int(input("rating (1-5)\n> "))
-    comment = input("comment (type 0 if no comment)\n> ")
 
     with open("/home/nic/Documents/python-projects/happiness-tracker/data.csv", "r") as f:
         lines = f.readlines()
@@ -16,7 +15,7 @@ def main():
         if last_date == str(date.today()):
             lines = lines[:-1]
 
-        lines.append(f"{cur_date},{rating},{comment}\n")
+        lines.append(f"{cur_date},{rating}\n")
 
     with open("/home/nic/Documents/python-projects/happiness-tracker/data.csv", "w") as f:
         for line in lines:
