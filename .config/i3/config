@@ -6,7 +6,8 @@ set $exallnosup exec_always --no-startup-id
 set $mod Mod4
 
 # font bar
-font pango:monospace 16
+font pango:monospace 12
+#font pango:monospace 28
 
 # xss-lock grabs a logind suspend inhibit lock and will use i3lock to lock the
 # screen before suspend. Use loginctl lock-session to lock your screen.
@@ -126,11 +127,9 @@ bar {
 }
 
 # wallpaper
-set $wallpaper /home/nic/Pictures/wallpapers/wallpaper6.png
-set $wallpaper2 /home/nic/Pictures/waifu.png
+set $wallpaper /home/nic/Pictures/wallpapers/favorites/aurora_from_ground.jpg
 $exallnosup feh --bg-fill $wallpaper
 bindsym $mod+p $exnosup feh --bg-fill $wallpaper
-bindsym $mod+o $exnosup feh --bg-fill $wallpaper2
 
 # i3lock script
 set $i3lockwall sh /home/nic/Scripts/lock
@@ -150,6 +149,9 @@ mode "$mode_system" {
 
 bindsym $mod+Ctrl+q mode "$mode_system"
 
+# set res of main display
+#$exnosup /home/nic/Scripts/dmonitors
+
 # keyboard layout
 $exallnosup setxkbmap -layout no
 
@@ -161,7 +163,13 @@ $exnosup picom
 $exnosup dunst
 $exallnosup /home/nic/Scripts/btcprice
 
-# border
+# gaps
+#gaps outer 10
+#gaps inner 10
+
+gaps outer 0
+gaps inner 0
+
 new_window pixel 3
 
 # sound
@@ -172,14 +180,3 @@ bindsym $mod+m $exnosup /home/nic/Scripts/toggle-volume
 # backlight
 bindsym $mod+Ctrl+u $exnosup /home/nic/Scripts/change-backlight 10
 bindsym $mod+Ctrl+i $exnosup /home/nic/Scripts/change-backlight -10
-
-
-# if 2nd monitor is connected
-#gaps outer 10
-#gaps inner 10
-#font pango:monospace 18
-#$exnosup /home/nic/Scripts/dmonitors
-
-# if no 2nd monitor
-gaps outer 0
-gaps inner 0

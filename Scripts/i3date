@@ -1,8 +1,8 @@
 #!/bin/sh
 
-#case $BLOCK_BUTTON in
-		#1) echo "Left click action" ;;
+case $BLOCK_BUTTON in
+                1) notify-send "$(cal)" ;;
 		#3) echo "Right click action" ;;
-#esac
+esac
 
 date | awk '/.*/ {print $3 "." $2 "("$1")"}'
