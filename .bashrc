@@ -8,12 +8,12 @@
 alias ls='ls --color=auto'
 PS1='[\u \W]\$ '
 
-PATH=$PATH:/home/nic/Scripts/:/usr/local/bin/geckodriver/:/home/nic/Documents/programs/stpwm/:/home/nic/.local/bin/
+PATH=$PATH:/home/nic/Scripts/:/usr/local/bin/geckodriver:/home/nic/stpwm:/home/nic/.local/bin
 export EDITOR=/usr/bin/vim
 set -o vi
 
 # Aliases
 alias flux="redshift -l 63:10"
 alias vcpt="ffmpeg -f x11grab -i :0.0 -f alsa -ac 2 -i hw:0 output1.mp4"
-alias update="sudo pacman -Syu"
-alias remove="sudo pacman -Rns"
+alias update="sudo pacman -Syyu"
+alias up="cd .."
