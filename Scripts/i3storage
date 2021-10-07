@@ -1,6 +1,6 @@
 #!/bin/sh
 
-main="/dev/nvme0n1p5"
+main="/dev/sda2"
 
 data=$(df -h | grep $main)
 
