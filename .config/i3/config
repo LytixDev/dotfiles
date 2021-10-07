@@ -1,8 +1,8 @@
 # shortcuts
 set $exnosup exec --no-startup-id
 set $exallnosup exec_always --no-startup-id
-set $home /home/nic
-set $scriptdir /home/nic/Scripts
+#set $home /home/nic
+#set /home/nic/Scripts /home/nic/Scripts
 
 # set mod key to windows key
 set $mod Mod4
@@ -26,7 +26,7 @@ floating_modifier $mod
 bindsym $mod+Return $exnosup kitty
 bindsym $mod+b $exnosup firefox
 bindsym $mod+c $exnosup chromium
-bindsym $mod+s $exnosup $scriptdir/screenshot
+bindsym $mod+s $exnosup /home/nic/Scripts/screenshot
 bindsym $mod+q kill
 bindsym $mod+d $exnosup i3-dmenu-desktop
 
@@ -104,36 +104,36 @@ bindsym $mod+Shift+r restart
 
 # resize window (you can also use the mouse for that)
 mode "resize" {
-		bindsym h resize shrink width 10 px or 10 ppt
-		bindsym j resize grow height 10 px or 10 ppt
-		bindsym k resize shrink height 10 px or 10 ppt
-		bindsym l resize grow width 10 px or 10 ppt
+    bindsym h resize shrink width 10 px or 10 ppt
+    bindsym j resize grow height 10 px or 10 ppt
+    bindsym k resize shrink height 10 px or 10 ppt
+    bindsym l resize grow width 10 px or 10 ppt
 
-        bindsym Return mode "default"
-        bindsym Escape mode "default"
-        bindsym $mod+r mode "default"
+    bindsym Return mode "default"
+    bindsym Escape mode "default"
+    bindsym $mod+r mode "default"
 }
 
 bindsym $mod+r mode "resize"
 
 # Polybar launch script
-#exec_always --no-startup-id $home/.config/polybar/launch.sh
+#exec_always --no-startup-id /home/nic/.config/polybar/launch.sh
 
 # i3blocks bar
 bar {
-	position top
-        status_command i3blocks
-	colors {
-	    background #1E292F
-	}
+    position top
+    status_command i3blocks
+    colors {
+        background #1E292F
+    }
 }
 
 # wallpaper
-set $wallpaper $home/Pictures/wallpapers/favorites/nice.jpg
+set $wallpaper /home/nic/Pictures/wallpapers/favorites/nice.jpg
 $exallnosup feh --bg-fill $wallpaper
 
 # i3lock script
-set $i3lockwall sh $scriptdir/lock
+set $i3lockwall sh /home/nic/Scripts/lock
 
 # shutdown / restart / suspend...
 set $mode_system System (l) lock, (e) logout, (r) reboot, (h) hibernate, (CTRL+s) shutdown
@@ -151,7 +151,7 @@ mode "$mode_system" {
 bindsym $mod+Ctrl+q mode "$mode_system"
 
 # set res of main display
-#$exnosup $scriptdir/dmonitors
+#$exnosup /home/nic/Scripts/dmonitors
 
 # keyboard layout
 $exallnosup setxkbmap -layout no
@@ -162,7 +162,7 @@ $exallnosup notify-send "Welcome back, Nicolai"
 # startup programs
 $exnosup picom
 $exnosup dunst
-$exallnosup $scriptdir/btcprice
+$exallnosup /home/nic/Scripts/btcprice
 
 # gaps
 #gaps outer 10
@@ -173,10 +173,10 @@ gaps inner 0
 new_window pixel 3
 
 # sound
-bindsym $mod+u $exnosup $scriptdir/change-volume 5 
-bindsym $mod+i $exnosup $scriptdir/change-volume -5
-bindsym $mod+m $exnosup $scriptdir/toggle-volume
+bindsym $mod+u $exnosup /home/nic/Scripts/change-volume 5 
+bindsym $mod+i $exnosup /home/nic/Scripts/change-volume -5
+bindsym $mod+m $exnosup /home/nic/Scripts/toggle-volume
 
 # backlight
-bindsym $mod+Ctrl+u $exnosup $scriptdir/change-backlight 10
-bindsym $mod+Ctrl+i $exnosup $scriptdir/change-backlight -10
+bindsym $mod+Ctrl+u $exnosup /home/nic/Scripts/change-backlight 10
+bindsym $mod+Ctrl+i $exnosup /home/nic/Scripts/change-backlight -10
