@@ -8,7 +8,7 @@ set $exallnosup exec_always --no-startup-id
 set $mod Mod4
 
 # font bar
-font pango:monospace 12
+font pango:monospace 13
 #font pango:monospace 28
 
 # xss-lock grabs a logind suspend inhibit lock and will use i3lock to lock the
