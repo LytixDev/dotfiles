@@ -13,4 +13,5 @@ cp $home/.bashrc $upstream_dir/.bashrc
 cp $home/.zshrc $upstream_dir/.zshrc
 cp $home/.vimrc $upstream_dir/.vimrc
 cp $home/.xinitrc $upstream_dir/.xinitrc
-
+cp $home/.config/nvim/init.lua $upstream_dir/.config/nvim/init.lua
+cp -r $home/.config/nvim/lua/* $upstream_dir/.config/nvim/lua

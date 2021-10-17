@@ -11,6 +11,8 @@ alias update="sudo pacman -Syyu"
 alias up="cd .."
 alias wttr="curl https://wttr.in"
 alias wttrtoday="curl v2d.wttr.in"
+alias dhps="cd Documents/DHPS"
+alias v="nvim"
 
 # enable colors
 autoload -U colors && colors
