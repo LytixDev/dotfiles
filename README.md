@@ -4,7 +4,7 @@
 - WM/DE: i3-gaps
 - bar: i3blocks
 - Terminal emulator: Kitty
-- Shell: bash (considering switching to zsh)
+- Shell: zsh
 - Notification deamon: dunst
 - Compositor: picom
 - Webrowser: firefox (main), tor, chromium and brave as secondaries.
