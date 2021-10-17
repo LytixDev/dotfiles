@@ -1,6 +1,6 @@
 #!/bin/sh
 home="/home/nic"
-upstream_dir="/home/nic/Documents/.files-upstream/.files"
+upstream_dir="/home/nic/Documents/dotfiles-upstream/.files"
 cp $home/Scripts/* $upstream_dir/Scripts
 cp $home/.config/picom.conf $upstream_dir/.config/
 cp $home/.config/kitty/kitty.conf $upstream_dir/.config/kitty/kitty.conf
@@ -10,6 +10,7 @@ cp $home/.config/i3blocks/config $upstream_dir/.config/i3blocks/config
 
 cp $home/.bash_profile $upstream_dir/.bash_profile
 cp $home/.bashrc $upstream_dir/.bashrc
+cp $home/.zshrc $upstream_dir/.zshrc
 cp $home/.vimrc $upstream_dir/.vimrc
 cp $home/.xinitrc $upstream_dir/.xinitrc
 

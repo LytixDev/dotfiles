@@ -3,6 +3,7 @@
 case $BLOCK_BUTTON in
 		1)
 			weather=$(curl -Ss 'https://wttr.in?0&T&Q')
+
 			notify-send "Weather" "$weather"
 			;;
 esac

@@ -16,7 +16,6 @@ call plug#begin('~/.vim/plugged')
 
 Plug 'vim-scripts/AutoComplPop'
 Plug 'morhetz/gruvbox'
-Plug 'junegunn/rainbow_parentheses.vim'
 Plug 'frazrepo/vim-rainbow'
 Plug 'itchyny/lightline.vim'
 Plug 'preservim/nerdtree'
@@ -34,7 +33,6 @@ set vb t_vb=
 set laststatus=2
 set noshowmode
 let g:lightline = {'colorscheme': 'powerline'}
-map <C-o> :NERDTreeToggle<CR>
 let g:rainbow_active = 1
 
 autocmd BufNewFile,BufRead * setlocal formatoptions-=cro
