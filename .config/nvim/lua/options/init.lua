@@ -1,6 +1,8 @@
 -- remaps
 vim.cmd('vnoremap <C-c> "+y')
 vim.cmd('map <C-p> "+p')
+vim.cmd('map <space>f :Telescope find_files<cr>')
+vim.cmd('map <space>g :Telescope live_grep<cr>')
 
 -- tab
 vim.o.tabstop = 8
@@ -12,8 +14,8 @@ vim.o.smarttab = true
 -- less pain
 vim.o.nu = true
 vim.o.relativenumber = true
--- no auto command on next line
-vim.cmd('autocmd BufNewFile,BufRead * setlocal formatoptions-=cro')
+-- no auto comment on next line
+vim.cmd('autocmd VimEnter * setlocal formatoptions-=c formatoptions-=r formatoptions-=o')
 vim.cmd('set nowrap')
 vim.opt.termguicolors = true
 vim.o.showmode = false

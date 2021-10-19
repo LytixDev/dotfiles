@@ -11,8 +11,12 @@ alias update="sudo pacman -Syyu"
 alias up="cd .."
 alias wttr="curl https://wttr.in"
 alias wttrtoday="curl v2d.wttr.in"
-alias dhps="cd Documents/DHPS"
+alias dhps="cd ~/Documents/DHPS"
+alias sem1="cd ~/Skole/semester_1"
 alias v="nvim"
+
+# path
+export PATH=/home/nic/Scripts:$PATH
 
 # enable colors
 autoload -U colors && colors

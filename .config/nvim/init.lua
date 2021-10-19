@@ -3,7 +3,8 @@ require('treesitter-config')
 require('options')
 require('lualine-config')
 require('nvim-tree-config')
-vim.cmd('colorscheme nord')
+require('telescope-config')
+require('lsp-config')
 
 -- vim plug
 local Plug = vim.fn['plug#']
@@ -11,6 +12,7 @@ local Plug = vim.fn['plug#']
 vim.call('plug#begin', '~/.config/nvim/plugged')
 
 Plug 'morhetz/gruvbox'
+--Plug 'neovim/nvim-lspconfig'
 
 vim.call('plug#end')
 
@@ -18,4 +20,4 @@ vim.call('plug#end')
 vim.cmd('colorscheme gruvbox')
 vim.cmd('set background=dark')
 vim.cmd('hi Normal guibg=NONE ctermbg=NONE')
-
+require'lspconfig'.pyright.setup{}

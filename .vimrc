@@ -19,6 +19,7 @@ Plug 'morhetz/gruvbox'
 Plug 'frazrepo/vim-rainbow'
 Plug 'itchyny/lightline.vim'
 Plug 'preservim/nerdtree'
+Plug 'dense-analysis/ale'
 
 call plug#end()
 
