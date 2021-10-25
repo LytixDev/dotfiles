@@ -14,6 +14,7 @@ alias wttrtoday="curl v2d.wttr.in"
 alias dhps="cd ~/Documents/DHPS"
 alias sem1="cd ~/Skole/semester_1"
 alias v="nvim"
+alias untar="tar -xvzf"
 
 # path
 export PATH=/home/nic/Scripts:$PATH

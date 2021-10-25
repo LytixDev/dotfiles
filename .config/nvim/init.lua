@@ -5,6 +5,7 @@ require('lualine-config')
 require('nvim-tree-config')
 require('telescope-config')
 require('lsp-config')
+require('cmp-config')
 
 -- vim plug
 local Plug = vim.fn['plug#']

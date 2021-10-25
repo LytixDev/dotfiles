@@ -6,5 +6,5 @@ require'nvim-tree'.setup {
 }
 
 vim.cmd('nnoremap <space>e :NvimTreeToggle<CR>')
-vim.cmd('nnoremap <space>r :NvimTreeRefresh<CR>')
 vim.cmd('nnoremap <space>n :NvimTreeFindFile<CR>')
+vim.cmd('nnoremap <space>r :NvimTreeOpen<CR>')
