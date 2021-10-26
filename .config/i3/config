@@ -176,7 +176,12 @@ new_window pixel 3
 bindsym $mod+u $exnosup /home/nic/Scripts/change-volume 5 
 bindsym $mod+i $exnosup /home/nic/Scripts/change-volume -5
 bindsym $mod+m $exnosup /home/nic/Scripts/toggle-volume
+bindsym XF86AudioRaiseVolume $exnosup /home/nic/Scripts/change-volume 5
+bindsym XF86AudioLowerVolume $exnosup /home/nic/Scripts/change-volume -5
+bindsym XF86AudioMute $exnosup /home/nic/Scripts/toggle-volume
 
 # backlight
 bindsym $mod+Ctrl+u $exnosup /home/nic/Scripts/change-backlight 10
 bindsym $mod+Ctrl+i $exnosup /home/nic/Scripts/change-backlight -10
+bindsym XF86MonBrightnessUp $exnosup /home/nic/Scripts/change-backlight 10
+bindsym XF86MonBrightnessDown $exnosup /home/nic/Scripts/change-backlight -10
