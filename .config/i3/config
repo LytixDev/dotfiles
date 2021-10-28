@@ -167,9 +167,6 @@ mode "$mode_system" {
 
 bindsym $mod+Ctrl+q mode "$mode_system"
 
-# set res of main display
-#$exnosup $scriptdir/dmonitors
-
 # keyboard layout
 $exallnosup setxkbmap -layout no
 
@@ -180,6 +177,7 @@ $exallnosup notify-send "Welcome back, Nicolai"
 $exnosup picom
 $exnosup dunst
 $exallnosup $scriptdir/btcprice
+$exnosup $scriptdir/setmonitors
 
 # gaps
 #gaps outer 10

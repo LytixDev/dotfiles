@@ -1,0 +1,43 @@
+#!/bin/sh
+# Script that lets me choice what monitor configuration I want to use
+# Starts on x login
+
+intern="eDP1"
+extern="HDMI1"
+
+choice=$(printf "intern\nextern1080p+intern\nextern1440p+intern\nextern4k+intern\nmirror1080p\nsmart\n" | dmenu)
+
+case $choice in
+    "intern")
+        xrandr | grep -q "$extern connected" && xrandr --output $extern --off
+        xrandr --output $intern --auto --primary
+        ;;
+        
+    "extern1080p+intern")
+        xrandr | grep -q "$extern connected" && xrandr --output $extern --set audio force-dvi --mode "1920x1080" --primary
+        xrandr --output $intern --auto --output $extern --left-of $intern
+        ;;
+
+    "extern1440p+intern")
+        xrandr | grep -q "$extern connected" && xrandr --output $extern --set audio force-dvi --mode "2560x1440" --primary
+        xrandr --output $intern --auto --output $extern --left-of $intern
+        ;;
+
+    "extern4k+intern")
+        xrandr | grep -q "$extern connected" && xrandr --output $extern --set audio force-dvi --mode "3840x2160" --primary
+        xrandr --output $intern --auto --output $extern --left-of $intern
+        ;;
+
+    "mirror1080p")
+        xrandr | grep -q "$extern connected" && xrandr --output $extern --set audio force-dvi --mode "1920x1080"
+        ;;
+
+    "smart")
+        xrandr --auto
+        ;;
+esac
+
+# changes to display settings usually causes i3 to get confused
+i3-msg reload > /dev/null
+sleep 0.5
+i3-msg reload > /dev/null
