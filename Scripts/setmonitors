@@ -4,36 +4,43 @@
 
 intern="eDP1"
 extern="HDMI1"
+term_conf="/home/nic/.config/kitty"
 
 choice=$(printf "intern\nextern1080p+intern\nextern1440p+intern\nextern4k+intern\nmirror1080p\nsmart\n" | dmenu)
 
 case $choice in
     "intern")
-        xrandr | grep -q "$extern connected" && xrandr --output $extern --off
+        xrandr | grep -q "$extern connected" && xrandr --output $extern --off || notify-send "Monitor $extern not connected"
         xrandr --output $intern --auto --primary
+        mv $term_conf/kitty_std.conf $term_conf/kitty.conf
         ;;
         
     "extern1080p+intern")
-        xrandr | grep -q "$extern connected" && xrandr --output $extern --set audio force-dvi --mode "1920x1080" --primary
+        xrandr | grep -q "$extern connected" && xrandr --output $extern --set audio force-dvi --mode "1920x1080" --primary || notify-send "Monitor $extern not connected"
         xrandr --output $intern --auto --output $extern --left-of $intern
+        mv $term_conf/kitty_std.conf $term_conf/kitty.conf
         ;;
 
     "extern1440p+intern")
-        xrandr | grep -q "$extern connected" && xrandr --output $extern --set audio force-dvi --mode "2560x1440" --primary
+        xrandr | grep -q "$extern connected" && xrandr --output $extern --set audio force-dvi --mode "2560x1440" --primary || notify-send "Monitor $extern not connected"
         xrandr --output $intern --auto --output $extern --left-of $intern
+        mv $term_conf/kitty_hdpi.conf $term_conf/kitty.conf
         ;;
 
     "extern4k+intern")
-        xrandr | grep -q "$extern connected" && xrandr --output $extern --set audio force-dvi --mode "3840x2160" --primary
+        xrandr | grep -q "$extern connected" && xrandr --output $extern --set audio force-dvi --mode "3840x2160" --primary || notify-send "Monitor $extern not connected"
         xrandr --output $intern --auto --output $extern --left-of $intern
+        mv $term_conf/kitty_hdpi.conf $term_conf/kitty.conf
         ;;
 
     "mirror1080p")
-        xrandr | grep -q "$extern connected" && xrandr --output $extern --set audio force-dvi --mode "1920x1080"
+        xrandr | grep -q "$extern connected" && xrandr --output $extern --set audio force-dvi --mode "1920x1080" || notify-send "Monitor $extern not connected"
+        mv $term_conf/kitty_std.conf $term_conf/kitty.conf
         ;;
 
     "smart")
         xrandr --auto
+        mv $term_conf/kitty_std.conf $term_conf/kitty.conf
         ;;
 esac
 
