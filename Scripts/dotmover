@@ -3,7 +3,7 @@ home="/home/nic"
 upstream_dir="/home/nic/Documents/dotfiles-upstream/.files"
 cp $home/Scripts/* $upstream_dir/Scripts
 cp $home/.config/picom.conf $upstream_dir/.config/
-cp $home/.config/kitty/kitty.conf $upstream_dir/.config/kitty/kitty.conf
+cp -r $home/.config/kitty/ $upstream_dir/.config/
 cp $home/.config/dunst/dunstrc $upstream_dir/.config/dunst/dunstrc
 cp $home/.config/i3/config $upstream_dir/.config/i3/config
 cp $home/.config/i3blocks/config $upstream_dir/.config/i3blocks/config

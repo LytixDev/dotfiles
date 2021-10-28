@@ -1,9 +1,8 @@
-# shortcuts
+# shortcuts 
 set $exnosup exec --no-startup-id
 set $exallnosup exec_always --no-startup-id
 set $scriptdir /home/nic/Scripts
 #set $home /home/nic
-#set $scriptdir $scriptdir
 
 # set mod key to windows key
 set $mod Mod4
@@ -23,6 +22,19 @@ $exnosup nm-applet
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
 
+# dropdown menus
+for_window [instance="dropdown"] floating enable
+for_window [instance="dropdown"] resize set 700 400
+for_window [instance="dropdown"] move scratchpad
+for_window [instance="dropdown"] border pixel 5
+$exnosup kitty --name dropdown
+
+for_window [instance="cmus"] floating enable
+for_window [instance="cmus"] resize set 800 400
+for_window [instance="cmus"] move scratchpad
+for_window [instance="cmus"] border pixel 5
+$exnosup kitty --name cmus cmus
+
 # keybindings
 bindsym $mod+Return $exnosup kitty
 bindsym $mod+b $exnosup firefox
@@ -30,6 +42,10 @@ bindsym $mod+c $exnosup chromium
 bindsym $mod+s $exnosup $scriptdir/screenshot
 bindsym $mod+q kill
 bindsym $mod+d $exnosup i3-dmenu-desktop
+
+# dropdown menu
+bindsym $mod+t [instance="dropdown"] scratchpad show; [instance="dropdown"] move position center
+bindsym $mod+y [instance="cmus"] scratchpad show; [instance="cmus"] move position center
 
 # change focus
 bindsym $mod+h focus left
