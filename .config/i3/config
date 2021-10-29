@@ -44,7 +44,7 @@ bindsym $mod+q kill
 bindsym $mod+d $exnosup i3-dmenu-desktop
 
 # dropdown menu
-bindsym $mod+t [instance="dropdown"] scratchpad show; [instance="dropdown"] move position center
+bindsym $mod+t [instance="dropdown"] scratchpad show; [instance="dropdown"] move position 1170 750
 bindsym $mod+y [instance="cmus"] scratchpad show; [instance="cmus"] move position center
 
 # change focus
