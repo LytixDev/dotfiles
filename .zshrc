@@ -6,7 +6,8 @@
 # aliases
 alias ls="ls --color=auto"
 alias flux="redshift -l 63:10"
-alias vcpt="ffmpeg -f x11grab -i :0.0 -f alsa -ac 2 -i hw:0 output1.mp4"
+#alias vcpt="ffmpeg -f x11grab -i :0.0 -f alsa -ac 2 -i hw:0 output1.mp4"
+alias vcpt="ffmpeg -f x11grab -i :0.0 -f pulse -i 4 output.mp4"
 alias update="sudo pacman -Syyu"
 alias up="cd .."
 alias wttr="curl https://wttr.in"
