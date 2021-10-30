@@ -6,7 +6,7 @@ intern="eDP1"
 extern="HDMI1"
 term_conf="/home/nic/.config/kitty"
 
-choice=$(printf "intern\nextern1080p+intern\nextern1440p+intern\nextern4k+intern\nmirror1080p\nsmart\n" | dmenu)
+choice=$(printf "intern\nextern1080p+intern\nextern1440p+intern\nextern4k+intern\nmirror1080p\nextern1080p\nextern1440p\nsmart\n" | dmenu)
 
 case $choice in
     "intern")
@@ -26,7 +26,6 @@ case $choice in
 
     "extern1440p+intern")
         xrandr | grep -q "$extern connected" &&
-        xrandr --output $extern --set audio force-dvi --mode "2560x1440" --primary &&
         xrandr --output $intern --auto --output $extern --left-of $intern &&
         cp $term_conf/kitty_hdpi.conf $term_conf/kitty.conf ||
         notify-send "Monitor $extern not connected" 
@@ -47,6 +46,19 @@ case $choice in
         notify-send "Monitor $extern not connected"
         ;;
 
+    "extern1080p")
+        xrandr | grep -q "$extern connected" && 
+        xrandr --output $extern --set audio force-dvi --mode "1920x1080" --primary &&
+        xrandr --output $intern --off &&
+        cp $term_conf/kitty_std.conf $term_conf/kitty.conf
+        ;;
+
+    "extern1440p")
+        xrandr | grep -q "$extern connected" && 
+        xrandr --output $extern --set audio force-dvi --mode "2560x1440" --primary &&
+        xrandr --output $intern --off &&
+        cp $term_conf/kitty_hdpi.conf $term_conf/kitty.conf
+        ;;
     "smart")
         xrandr --auto
         cp $term_conf/kitty_std.conf $term_conf/kitty.conf
