@@ -12,14 +12,14 @@ esac
 percentage=$(upower -i /org/freedesktop/UPower/devices/battery_BAT0 | awk '/^.*percentage/ {print $2}')
 raw=$(echo $percentage | cut -f1 -d"%")
 
-if [ $raw -le 25 ] && [ $state == "discharging" ]; then
+if [ $raw -le 25 ] && [ $state = "discharging" ]; then
     notify-send -u "critical" "Battery low $percentage"
 
-elif [ $raw == 40 ] && [ $state == "discharging" ]; then
-    notify-send "Battery under 40, consider charging"
+elif [ $raw = 40 ] && [ $state = "discharging" ]; then
+    notify-send -t 10000 "Battery under 40, consider charging"
 
-elif [ $raw == 80 ] && [ $state == "charging" ]; then
-    notify-send "Battery over 80, consider plugging out the charger"
+elif [ $raw = 80 ] && [ $state = "charging" ]; then
+    notify-send -t 10000 "Battery over 80, consider plugging out the charger"
 fi
 
-echo $percentage
+echo "$percentage"

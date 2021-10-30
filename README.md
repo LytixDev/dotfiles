@@ -4,8 +4,12 @@
 - WM/DE: i3-gaps
 - bar: i3blocks
 - Terminal emulator: Kitty
-- Shell: zsh
+- Shell: zsh as interactive, bash for everything else
 - Notification deamon: dunst
 - Compositor: picom
 - Webrowser: firefox (main), tor, chromium and brave as secondaries.
-- Text editor: vim !!! (considering neovim)
+- Text editor: neovim/vim
+   
+   - Packer and Vim-Plug to download packages
+   - ALE as my main tool for linting
+   - Language servers: pmd (java), pyright (python), clangd (c), shellcheck (bash).
