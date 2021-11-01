@@ -103,6 +103,7 @@ bindkey -s "^h" "history 1\n"
 bindkey -s "^l" "clear\n"
 
 # spaceship config
+SPACESHIP_DIR_TRUNC=1
 SPACESHIP_PROMPT_ADD_NEWLINE=false
 SPACESHIP_PROMPT_SEPARATE_LINE=false
 SPACESHIP_CHAR_SYMBOL=">"

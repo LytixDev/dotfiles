@@ -4,17 +4,17 @@
 mem=$(free -h | awk '/^Mem:/ {print $3 "/" $2}')
 
 case $BLOCK_BUTTON in
-		1)
-			notify-send "Memory" "$mem"
-			;;
+    1)
+        notify-send "Memory" "$mem"
+	;;
 esac
 
 simplified=$(echo $mem | sed 's/Gi//g; s/Mi//g; s/\.//g')
 res=$(echo $simplified | bc -l | sed "s/\.//" | cut -b 1,2)
 
 if echo $mem | grep -q "Mi" ; then
-	res="$(echo $res | cut -b 1)%"
-	echo $res
+    res="$(echo $res | cut -b 1)%"
+    echo $res
 else
-	echo $res%
+    echo $res%
 fi

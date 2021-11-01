@@ -10,7 +10,6 @@ choice=$(printf "intern\nextern1080p+intern\nextern1440p+intern\nextern4k+intern
 
 case $choice in
     "intern")
-        xrandr | grep -q "$extern connected" && 
         xrandr --output $extern --off &&
         xrandr --output $intern --auto --primary &&
         cp $term_conf/kitty_std.conf $term_conf/kitty.conf
