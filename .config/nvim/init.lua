@@ -14,6 +14,7 @@ local Plug = vim.fn['plug#']
 
 vim.call('plug#begin', '~/.config/nvim/plugged')
 
+Plug 'vim-scripts/AutoComplPop'
 Plug 'morhetz/gruvbox'
 Plug 'dense-analysis/ale'
 
@@ -23,3 +24,8 @@ vim.call('plug#end')
 vim.cmd('colorscheme gruvbox')
 vim.cmd('set background=dark')
 vim.cmd('hi Normal guibg=NONE ctermbg=NONE')
+
+-- autocomplete suggestions
+vim.cmd('set incsearch')
+vim.cmd('set complete+=kspell')
+vim.cmd('set completeopt=menuone,longest')
