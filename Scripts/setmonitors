@@ -64,6 +64,3 @@ case $choice in
         ;;
 esac
 
-# changes to display settings usually causes i3 to get confused
-sleep 1.5
-i3-msg reload > /dev/null

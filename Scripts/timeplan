@@ -1,11 +1,13 @@
 #!/bin/sh
 
+# static part of the url
 a="https://tp.uio.no/ntnu/timeplan/?id=22422&type=student&week="
-b="&weekTo=52&ar=2021"
+b="&weekTo=52&ar="
 
-uke=$(uke)
+# gets current week and year
+week=$(date +"%V")
+year=$(date +"%Y")
 
-link="$a$uke$b"
+link="$a$week$b$year"
 
-firefox $link
-echo $link
+echo "$link" && firefox "$link"

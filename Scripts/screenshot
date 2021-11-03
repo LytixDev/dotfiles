@@ -1,6 +1,7 @@
 #!/bin/sh
 
 dir="/home/nic/Pictures/screenshots"
+
+# if dir does not exist, create it
 mkdir -p $dir
-cd $dir
-scrot
+cd $dir && scrot || notfy-send "Screenshot failed"
