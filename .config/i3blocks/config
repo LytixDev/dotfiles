@@ -1,7 +1,7 @@
-dir=/home/nic/Scripts
+dir=/home/nic/Scripts/bar
 
 [stonkvalue]
-command=$dir/stonks/stonkprice.sh
+command=/home/nic/Scripts/stonks/stonkprice.sh
 interval=once
 signal=40
 color=#82b741

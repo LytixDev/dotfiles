@@ -57,6 +57,7 @@ noto-fonts-emoji
 npm
 ntfs-3g
 os-prober
+pactl
 patch
 pavucontrol
 picom
@@ -130,6 +131,7 @@ xorg-xwayland
 xorg-xwd
 xorg-xwininfo
 xorg-xwud
+xss-lock
 yay
 zsh
 zsh-syntax-highlighting
