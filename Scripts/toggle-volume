@@ -1,1 +1,10 @@
-amixer -q -D pulse sset Master toggle
+#!/bin/sh
+
+# gives error on new soundcard
+#amixer -q -D pulse sset Master toggle
+
+# pure alsa 
+#amixer sset Master toggle
+
+
+pactl -- set-sink-mute @DEFAULT_SINK@ toggle
