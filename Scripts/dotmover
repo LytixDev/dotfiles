@@ -2,6 +2,7 @@
 home="/home/nic"
 upstream_dir="/home/nic/Documents/dotfiles-upstream/.files"
 cp $home/Scripts/* $upstream_dir/Scripts
+cp $home/Scripts/bar/* $upstream_dir/Scripts/bar
 cp $home/.config/picom.conf $upstream_dir/.config/
 cp -r $home/.config/kitty/ $upstream_dir/.config/
 cp $home/.config/dunst/dunstrc $upstream_dir/.config/dunst/dunstrc
