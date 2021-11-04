@@ -1,0 +1,8 @@
+#!/bin/sh
+
+# this script will slow down the rate of acceleration of the trackpoint
+# on thinkpads. I find them too fast. Find device_id of the trackpoint by
+# running: xinput --list --short
+
+device_id=16
+xinput --set-prop $device_id "libinput Accel Speed" -0.5
