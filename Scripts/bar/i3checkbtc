@@ -1,2 +1,4 @@
 #!/bin/sh
+
 echo "$(cat /tmp/btcprice.txt)$"
+#sed 's/$/\$/' "/tmp/btcprice.txt"

@@ -1,9 +1,8 @@
 #!/bin/sh
 
-percent=$(xbacklight -get | cut -f1 -d".")"%"
-echo $percent
-case $BLOCK_BUTTON in
-		1) /home/nic/Scripts/change-backlight 5 > /dev/null ;;
-		3) /home/nic/Scripts/change-backlight -5 > /dev/null ;;
-esac
+#percent=$(xbacklight -get | cut -f1 -d".")"%"
 
+# slightly faster than previous method where i define a variable
+# uses the stream editor to 'append' to the end of the stream by
+# replacing the end of the line with %
+xbacklight -get | cut -f1 -d"." | sed 's/$/%/'
