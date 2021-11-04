@@ -1,0 +1,3 @@
+#!/bin/sh
+
+brightnessctl --device='tpacpi::kbd_backlight' set "$1" > /dev/null
