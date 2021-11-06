@@ -4,5 +4,5 @@
 # on thinkpads. I find them too fast. Find device_id of the trackpoint by
 # running: xinput --list --short
 
-device_id=16
+device_id=$(xinput --list --short | awk '/^.*TPPS/ {print $6}' | sed 's/id=//')
 xinput --set-prop $device_id "libinput Accel Speed" -0.5
