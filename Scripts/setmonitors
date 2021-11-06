@@ -49,14 +49,16 @@ case $choice in
         xrandr | grep -q "$extern connected" && 
         xrandr --output $extern --set audio force-dvi --mode "1920x1080" --primary &&
         xrandr --output $intern --off &&
-        cp $term_conf/kitty_std.conf $term_conf/kitty.conf
+        cp $term_conf/kitty_std.conf $term_conf/kitty.conf ||
+        notify-send "Monitor $extern not connected"
         ;;
 
     "extern1440p")
         xrandr | grep -q "$extern connected" && 
         xrandr --output $extern --set audio force-dvi --mode "2560x1440" --primary &&
         xrandr --output $intern --off &&
-        cp $term_conf/kitty_hdpi.conf $term_conf/kitty.conf
+        cp $term_conf/kitty_hdpi.conf $term_conf/kitty.conf ||
+        notify-send "Monitor $extern not connected"
         ;;
     "smart")
         xrandr --auto
