@@ -39,7 +39,7 @@ _comp_options+=(globdots)  # include hidden files.
 
 # vi mode
 bindkey -v
-export KEYTIMEOUT=1
+# export KEYTIMEOUT=100
 
 # edit line in vim buffer ctrl-v
 autoload edit-command-line; zle -N edit-command-line
@@ -103,9 +103,8 @@ bindkey -s "^h" "history 1\n"
 bindkey -s "^l" "clear\n"
 
 # spaceship config
-SPACESHIP_DIR_TRUNC=1
 SPACESHIP_PROMPT_ADD_NEWLINE=false
-SPACESHIP_PROMPT_SEPARATE_LINE=false
+SPACESHIP_PROMPT_SEPARATE_LINE=true
 SPACESHIP_CHAR_SYMBOL=">"
 SPACESHIP_CHAR_SUFFIX=" "
 SPACESHIP_HG_SHOW=false
