@@ -173,14 +173,14 @@ $exallnosup notify-send "Welcome back, Nicolai"
 # startup programs
 $exnosup picom
 $exnosup dunst
-$exnosup $scriptdir/get_btc_price
+$exallnosup $scriptdir/get-btc-price
 $exnosup $scriptdir/setmonitors
 
 # gaps
-#gaps outer 10
-#gaps inner 15
-gaps outer 0
-gaps inner 0
+gaps outer 5
+gaps inner 18
+#gaps outer 0
+#gaps inner 0
 
 new_window pixel 3
 
