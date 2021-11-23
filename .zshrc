@@ -39,7 +39,7 @@ _comp_options+=(globdots)  # include hidden files.
 
 # vi mode
 bindkey -v
-# export KEYTIMEOUT=100
+export KEYTIMEOUT=1
 
 # edit line in vim buffer ctrl-v
 autoload edit-command-line; zle -N edit-command-line
