@@ -1,5 +1,11 @@
 dir=/home/nic/Scripts/bar
 
+[cursong]
+command=$dir/i3current_song
+interval=once
+signal=20
+label=🎵 -> 
+
 [stonkvalue]
 command=/home/nic/Scripts/stonks/stonkprice.sh
 interval=once

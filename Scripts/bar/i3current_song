@@ -1,0 +1,2 @@
+#!/bin/env bash
+cmus-remote -Q | awk 'NR==2' | sed 's/.*\///; s/\.mp3//'

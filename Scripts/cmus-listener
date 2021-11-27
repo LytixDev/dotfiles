@@ -1,0 +1,18 @@
+#!/bin/env bash
+
+#echo "$(cmus-remote -Q | awk 'NR==2')" > /tmp/current_song
+current_song=$(cmus-remote -Q | awk 'NR==2')
+
+difference=$(echo "$current_song" | diff  /tmp/current_song -)
+
+while true
+do
+    sleep 1
+    if [ "$difference" != "" ]
+    then
+        echo "$current_song" > /tmp/current_song
+        pkill -SIGRTMIN+20 i3blocks
+    fi
+done
+
+
