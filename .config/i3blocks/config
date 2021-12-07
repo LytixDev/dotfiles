@@ -1,10 +1,15 @@
 dir=/home/nic/Scripts/bar
 
+[chess]
+command=$dir/i3sesse
+interval=120
+label=♟️
+
 [cursong]
 command=$dir/i3current_song
 interval=once
 signal=20
-label=🎵 -> 
+label=🎵
 
 [stonkvalue]
 command=/home/nic/Scripts/stonks/stonkprice.sh
