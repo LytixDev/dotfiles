@@ -4,4 +4,4 @@ dir="/home/nic/Pictures/screenshots"
 
 # if dir does not exist, create it
 mkdir -p $dir
-cd $dir && scrot || notfy-send "Screenshot failed"
+cd $dir && scrot && notify-send -t 1000 "Took screenshot succesfully" || notfy-send -t 1000 "Screenshot failed"
