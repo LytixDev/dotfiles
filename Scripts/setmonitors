@@ -7,6 +7,9 @@ extern="HDMI1"
 term_conf="/home/nic/.config/kitty"
 dpi=95
 
+# if external monitor not connected, exit
+xrandr | grep "$extern connected" || notify-send "External monitor not connected"; exit 0
+
 choice=$(printf "intern\nextern1080p+intern\nextern1440p+intern\nextern4k+intern\nmirror1080p\nextern1080p\nextern1440p\nsmart\n" | dmenu)
 
 case $choice in
