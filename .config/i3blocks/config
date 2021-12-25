@@ -1,9 +1,9 @@
 dir=/home/nic/Scripts/bar
 
-[chess]
-command=$dir/i3sesse
-interval=120
-label=♟️
+#[chess]
+#command=$dir/i3sesse
+#interval=120
+#label=♟️
 
 [cursong]
 command=$dir/i3current_song

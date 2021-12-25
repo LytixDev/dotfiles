@@ -2,5 +2,5 @@
 data=$(python /home/nic/Scripts/sesse.py)
 eval=$(echo "$data" | grep '<span id="score">' | sed "s/.*Score://" | cut -b2-5)
 info=$(echo "$data" | grep '<h1 id="headline">' | sed 's/.*"headline">//; s/\,.*//')
-move=$(echo "$data" | grep '<h1 id="headline">' | sed 's/.* after //; s/\….*//')
+move=$(echo "$data" | grep '<h1 id="headline">' | sed 's/.* after //; s/<.*//')
 echo "$info" "E:" "$eval" "M:" "$move"
