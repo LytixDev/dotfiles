@@ -1,0 +1,7 @@
+#!/bin/bash
+
+for f in *.mp3
+do
+    new_name=$(echo "$f" | sed 's/.*_//')
+    mv "$f" "$new_name"
+done
