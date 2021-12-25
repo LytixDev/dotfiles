@@ -6,11 +6,15 @@ intern="eDP1"
 extern="HDMI1"
 term_conf="/home/nic/.config/kitty"
 dpi=95
+flag=$1  # -s flag, -> only show if external monitor is connected
 
 # if external monitor not connected, exit
-xrandr | grep "$extern connected" >/dev/null
-exit_code=$?
-[ $exit_code -eq 1 ] && notify-send "$extern is not connected" && exit 0
+if [ "$flag" = "-s" ]
+then
+    xrandr | grep "$extern connected" >/dev/null
+    exit_code=$?
+    [ $exit_code -eq 1 ] && notify-send "$extern is not connected" && exit 0
+fi
 
 choice=$(printf "intern\nextern1080p+intern\nextern1440p+intern\nextern4k+intern\nmirror1080p\nextern1080p\nextern1440p\nsmart\n" | dmenu)
 
