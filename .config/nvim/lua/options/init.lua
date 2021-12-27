@@ -1,6 +1,6 @@
 -- remaps
 vim.cmd('vnoremap <C-c> "+y')
-vim.cmd('map <C-p> "+P')
+vim.cmd('map <C-p> "+p')
 vim.cmd('map <space>f :Telescope find_files<cr>')
 vim.cmd('map <space>g :Telescope live_grep<cr>')
 

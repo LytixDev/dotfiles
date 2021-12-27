@@ -20,7 +20,7 @@ Plug 'dense-analysis/ale'
 
 vim.call('plug#end')
 
--- set colorscheme
+-- set colorscheme and enable transparency
 vim.cmd('colorscheme gruvbox')
 vim.cmd('set background=dark')
 vim.cmd('hi Normal guibg=NONE ctermbg=NONE')
@@ -29,3 +29,5 @@ vim.cmd('hi Normal guibg=NONE ctermbg=NONE')
 vim.cmd('set incsearch')
 vim.cmd('set complete+=kspell')
 vim.cmd('set completeopt=menuone,longest')
+
+-- when searching for a pattern, use ':noh' do remove highlighting after done
