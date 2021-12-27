@@ -1,7 +1,5 @@
 alsa-firmware
 alsa-utils
-arandr
-atril
 autoconf
 automake
 base
@@ -11,8 +9,6 @@ bison
 bluez
 bluez-utils
 brightnessctl
-cheese
-chromium
 cmus
 dialog
 dmenu
@@ -26,12 +22,10 @@ firefox
 flex
 fzf
 gcc
-gimp
 git
 groff
 grub
 grub-customizer
-gvim
 htop
 i3-gaps
 i3blocks
@@ -47,8 +41,6 @@ m4
 make
 mpv
 mtools
-nemo
-neofetch
 neovim
 nerd-fonts-complete
 network-manager-applet

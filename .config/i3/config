@@ -193,6 +193,8 @@ bindsym $mod+m $exnosup $scriptdir/toggle-volume
 bindsym XF86AudioRaiseVolume $exnosup $scriptdir/change-volume 5
 bindsym XF86AudioLowerVolume $exnosup $scriptdir/change-volume -5
 bindsym XF86AudioMute $exnosup $scriptdir/toggle-volume
+
+# cmus
 bindsym XF86AudioNext $exnosup cmus-remote -n && pkill -SIGRTMIN+20 i3blocks
 bindsym XF86AudioPrev $exnosup cmus-remote -r && pkill -SIGRTMIN+20 i3blocks
 bindsym XF86AudioPause $exnosup cmus-remote -u && pkill -SIGRTMIN+20 i3blocks
@@ -203,3 +205,6 @@ bindsym $mod+Ctrl+u $exnosup $scriptdir/change-backlight 10
 bindsym $mod+Ctrl+i $exnosup $scriptdir/change-backlight -10
 bindsym XF86MonBrightnessUp $exnosup $scriptdir/change-backlight 10
 bindsym XF86MonBrightnessDown $exnosup $scriptdir/change-backlight -10
+
+# set monitor config
+bindsym $mod+Ctrl+m $exnosup $scriptdir/setmonitors
