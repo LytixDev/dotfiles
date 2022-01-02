@@ -35,16 +35,19 @@ for_window [instance="dropdown"] floating enable
 for_window [instance="dropdown"] resize set 700 400
 for_window [instance="dropdown"] move scratchpad
 for_window [instance="dropdown"] border pixel 5
-$exnosup kitty --name dropdown
+#$exnosup kitty --name dropdown
+$exnosup st -n dropdown
 
 for_window [instance="cmus"] floating enable
 for_window [instance="cmus"] resize set 1000 600
 for_window [instance="cmus"] move scratchpad
 for_window [instance="cmus"] border pixel 5
-$exnosup kitty --name cmus -o font_size=18 cmus
+#$exnosup kitty --name cmus -o font_size=18 cmus
+$exnosup st -n cmus -e cmus
 
 # keybindings
-bindsym $mod+Return $exnosup kitty
+#bindsym $mod+Return $exnosup kitty
+bindsym $mod+Return $exnosup st
 bindsym $mod+b $exnosup firefox
 bindsym $mod+c $exnosup chromium
 bindsym $mod+s $exnosup $scriptdir/screenshot
@@ -145,9 +148,11 @@ bindsym $mod+r mode "resize"
 bar {
     position top
     status_command i3blocks
+    #i3bar_command i3bar --transparency
     colors {
         background #1E292F
         separator  #B0B3A1 
+        statusline #D1DEBB
         # colorclass    border   background  text
         focused_workspace  #B0B3A1 #B0B3A1 #222222
         active_workspace   #5f676a #5f676a #ffffff
