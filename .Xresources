@@ -1,4 +1,4 @@
-*.font:	Liberation mono:pixelsize=20:antialias=true:autohint=true;
+*.font:	FiraMono Nerd Font:style=Regular:pixelsize=20:antialias=true:autohint=true;
 *.alpha: 0.97
 
 *.background:            #1b1d22
