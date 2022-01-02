@@ -149,9 +149,9 @@ bar {
         background #1E292F
         separator  #B0B3A1 
         # colorclass    border   background  text
-        focused_workspace  #B0B3A1 #B0B3A1 #ffffff
+        focused_workspace  #B0B3A1 #B0B3A1 #222222
         active_workspace   #5f676a #5f676a #ffffff
-        inactive_workspace #333333 #222222 #888888
+        inactive_workspace #222222 #222222 #B0B3A1
         urgent_workspace   #900000 #900000 #ffffff
         binding_mode       #900000 #900000 #ffffff
     }
