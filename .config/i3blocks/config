@@ -11,12 +11,12 @@ interval=once
 signal=20
 label=🎵
 
-[stonkvalue]
-command=/home/nic/Scripts/stonks/stonkprice.sh
-interval=once
-signal=40
-color=#82b741
-label=💵
+#[stonkvalue]
+#command=/home/nic/Scripts/stonks/stonkprice.sh
+#interval=once
+#signal=40
+#color=#82b741
+#label=💵
 
 [btcprice]
 command=$dir/i3checkbtc

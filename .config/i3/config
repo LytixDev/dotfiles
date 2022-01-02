@@ -10,6 +10,15 @@ set $mod Mod4
 #font pango:monospace 13
 font pango:Iosevka Term Light 13
 
+# colors
+# class                 border  backgr. text    indicator child_border
+client.focused          #4c7899 #285577 #ffffff #B0B3A1   #B0B3A1
+client.focused_inactive #333333 #5f676a #ffffff #484e50   #666C61
+client.unfocused        #333333 #222222 #888888 #292d2e   #1E292F
+client.urgent           #2f343a #900000 #ffffff #900000   #900000
+client.placeholder      #000000 #0c0c0c #ffffff #000000   #0c0c0c
+
+
 # xss-lock grabs a logind suspend inhibit lock and will use i3lock to lock the
 # screen before suspend. Use loginctl lock-session to lock your screen.
 $exnosup xss-lock --transfer-sleep-lock -- i3lock --nofork
@@ -132,16 +141,22 @@ mode "resize" {
 
 bindsym $mod+r mode "resize"
 
-# Polybar launch script
-#exec_always --no-startup-id /home/nic/.config/polybar/launch.sh
-
 # i3blocks bar
 bar {
     position top
     status_command i3blocks
     colors {
         background #1E292F
+        separator  #B0B3A1 
+        # colorclass    border   background  text
+        focused_workspace  #B0B3A1 #B0B3A1 #ffffff
+        active_workspace   #5f676a #5f676a #ffffff
+        inactive_workspace #333333 #222222 #888888
+        urgent_workspace   #900000 #900000 #ffffff
+        binding_mode       #900000 #900000 #ffffff
     }
+    separator_symbol "|"
+    workspace_min_width 30
 }
 
 # wallpaper
@@ -184,7 +199,7 @@ gaps inner 18
 #gaps outer 0
 #gaps inner 0
 
-new_window pixel 3
+new_window pixel 5
 
 # sound
 bindsym $mod+u $exnosup $scriptdir/change-volume 5 
