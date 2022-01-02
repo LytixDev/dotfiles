@@ -3,7 +3,7 @@
 - Display server: Xorg (considering switching to Wayland)
 - WM/DE: i3-gaps
 - bar: i3blocks
-- Terminal emulator: Kitty
+- Terminal emulator: ST (Suckless Terminal with lukesmith.xyz's patches)
 - Shell: zsh as interactive, bash for everything else
 - Notification deamon: dunst
 - Compositor: picom
