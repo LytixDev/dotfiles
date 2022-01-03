@@ -18,8 +18,8 @@ state=$(cat /sys/class/power_supply/BAT0/status)
 
 [ "$state" = "Charging" ] && icon="🔌"
 
-[ "$capacity" -le 25 ] && [ "$state" = "Discharging" ] && icon="❗" && notify-send -u "critical" "Battery low $capacity" ||
-[ "$capacity" -eq 40 ] && [ "$state" = "Discharging" ] && icon="⚠" && notify-send -t 10000 "Battery under 40, consider charging" ||
+[ "$capacity" -le 25 ] && [ "$state" = "Discharging" ] && icon="❗" && notify-send -u "critical" "Battery low $capacity"
+[ "$capacity" -eq 40 ] && [ "$state" = "Discharging" ] && notify-send -t 10000 "Battery under 40, consider charging"
 [ "$capacity" -eq 80 ] && [ "$state" = "Charging" ] && notify-send -t 10000 "Battery over 80, consider plugging out the charger"
 
 echo "$icon""$capacity%"
