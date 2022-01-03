@@ -8,3 +8,4 @@
 
 
 pactl -- set-sink-mute @DEFAULT_SINK@ toggle
+pkill -SIGRTMIN+10 i3blocks

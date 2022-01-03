@@ -56,7 +56,6 @@ label=💡
 command=$dir/i3volume
 interval=once
 signal=10
-label=🔉
 
 [battery]
 command=$dir/i3battery
