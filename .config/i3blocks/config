@@ -61,7 +61,6 @@ label=🔉
 [battery]
 command=$dir/i3battery
 interval=60
-label=🔋
 
 [date]
 command=$dir/i3date

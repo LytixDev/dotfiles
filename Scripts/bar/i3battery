@@ -1,25 +1,25 @@
 #!/bin/sh
-bat_data=$(upower -i /org/freedesktop/UPower/devices/battery_BAT0)
-state=$(echo $bat_data | sed "s/.*state: //; s/\s.*//")
+# written by Nicolai Brand (lytix.dev) 03.01.2022
 
 case $BLOCK_BUTTON in
     1)
+        # using upower to get data on time until battery is fully charged/discharged.
+        # can't find a file in /sys/class/power_supply/BAT?/ that does the same.
+        bat_data=$(upower -i /org/freedesktop/UPower/devices/battery_BAT0)
+        state=$(echo $bat_data | sed "s/.*state: //; s/\s.*//")
         time_to=$(echo $bat_data | sed "s/.*time//; s/\spercentage.*//")
 	notify-send "Battery" "State: $state\nTime$time_to"
 	;;
 esac
 
-percentage=$(upower -i /org/freedesktop/UPower/devices/battery_BAT0 | awk '/^.*percentage/ {print $2}')
-raw=$(echo $percentage | cut -f1 -d"%")
+icon="🔋"
+capacity=$(cat /sys/class/power_supply/BAT0/capacity)
+state=$(cat /sys/class/power_supply/BAT0/status)
 
-if [ $raw -le 25 ] && [ $state = "discharging" ]; then
-    notify-send -u "critical" "Battery low $percentage"
+[ "$state" = "Charging" ] && icon="🔌"
 
-elif [ $raw = 40 ] && [ $state = "discharging" ]; then
-    notify-send -t 10000 "Battery under 40, consider charging"
+[ "$capacity" -le 25 ] && [ "$state" = "Discharging" ] && icon="❗" && notify-send -u "critical" "Battery low $capacity" ||
+[ "$capacity" -eq 40 ] && [ "$state" = "Discharging" ] && icon="⚠" && notify-send -t 10000 "Battery under 40, consider charging" ||
+[ "$capacity" -eq 80 ] && [ "$state" = "Charging" ] && notify-send -t 10000 "Battery over 80, consider plugging out the charger"
 
-elif [ $raw = 80 ] && [ $state = "charging" ]; then
-    notify-send -t 10000 "Battery over 80, consider plugging out the charger"
-fi
-
-echo "$percentage"
+echo "$icon""$capacity%"
