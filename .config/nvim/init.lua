@@ -17,6 +17,7 @@ vim.call('plug#begin', '~/.config/nvim/plugged')
 Plug 'vim-scripts/AutoComplPop'
 Plug 'morhetz/gruvbox'
 Plug 'dense-analysis/ale'
+Plug 'lervag/vimtex'
 
 vim.call('plug#end')
 
@@ -31,3 +32,21 @@ vim.cmd('set complete+=kspell')
 vim.cmd('set completeopt=menuone,longest')
 
 -- when searching for a pattern, use ':noh' do remove highlighting after done
+
+-- VimTeX stuff
+-- This is necessary for VimTeX to load properly. The "indent" is optional.
+-- Note that most plugin managers will do this automatically.
+vim.cmd('filetype plugin indent on')
+
+-- This enables Vim's and neovim's syntax-related features. Without this, some
+-- VimTeX features will not work (see ":help vimtex-requirements" for more
+-- info).
+vim.cmd('syntax enable')
+
+-- viewer method:
+vim.cmd('let g:vimtex_view_method = "zathura"')
+
+-- Most VimTeX mappings rely on localleader and this can be changed with the
+-- following line. The default is usually fine and is the symbol "\".
+vim.cmd('let maplocalleader = ","')
+-- commands: ll -> start. lk -> stop. lc -> clear. lv -> forward
