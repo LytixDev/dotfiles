@@ -2,7 +2,6 @@
 
 case $BLOCK_BUTTON in
                 1) notify-send -t 5000 "$(cal -n 3)" ;;
-		#3) echo "Right click action" ;;
 esac
 
 date | awk '/.*/ {print $3 "." $2 "("$1")"}'

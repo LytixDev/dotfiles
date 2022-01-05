@@ -1,13 +1,13 @@
-#!/bin/sh
+#!/bin/bash
 
-#main="/dev/sda2"
+# Written by Nicolai Brand (lytix.dev) 05.01.2022
 main="/dev/nvme0n1p5"
 
 data=$(df -h | grep $main)
 
 case $BLOCK_BUTTON in
     1)
-        info="mount,            total, used, free, %"
+        info="mount,          total, used, free"
         notify-send "Storage" "$info\n$data"
         ;;
 esac

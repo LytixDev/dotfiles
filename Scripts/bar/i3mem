@@ -1,5 +1,6 @@
-#!/bin/sh
-#free -h | awk '/^Mem:/ {print $3 "/" $2}' | sed 's/Gi/GB/g; s/Mi/MB/g'
+#!/bin/bash
+
+# Written by Nicolai Brand (lytix.dev) 05.01.2022
 
 mem=$(free -h | awk '/^Mem:/ {print $3 "/" $2}')
 
@@ -9,10 +10,10 @@ case $BLOCK_BUTTON in
 	;;
 esac
 
+# convert from Mi to Gb
 if echo $mem | grep -q "Mi"; then
     simplified=$(echo $mem | sed 's/\//\/(/; s/Gi/\*10)/g; s/Mi//g; s/\.//g')
 else
-    simplified="$(echo $mem | sed 's/Gi//g; s/Mi//g')"
-    simplified="$simplified*100"
+    simplified="$(echo $mem | sed 's/Gi//g; s/Mi//g')*100"
 fi
-echo "$(echo $simplified | bc -l | cut -b 1-3 | sed 's/\..*//')%"
+echo "$simplified" | bc -l | cut -b 1-3 | sed 's/\..*//; s/$/%/'
