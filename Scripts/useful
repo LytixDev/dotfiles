@@ -1,0 +1,160 @@
+#!/bin/sh
+
+# POSIX alternatives to external processes.
+# Many examples taken from: https://github.com/dylanaraps/pure-sh-bible
+
+# '#' return left of first match
+# '##' return left of last match
+# '%' return right of first match
+# '%%' return right of last match
+
+
+lstrip() {
+    # usage lstrip "string" "pattern"
+    printf '%s\n' "${1##$2}"
+}
+
+rstrip() {
+    # usage rstrip "string" "pattern"
+    printf '%s\n' "${1%%$2}"
+}
+
+trim_string() {
+    # Usage: trim_string "   example   string    "
+
+    # Remove all leading white-space.
+    # '${1%%[![:space:]]*}': Strip everything but leading white-space.
+    # '${1#${XXX}}': Remove the white-space from the start of the string.
+    trim=${1#${1%%[![:space:]]*}}
+
+    # Remove all trailing white-space.
+    # '${trim##*[![:space:]]}': Strip everything but trailing white-space.
+    # '${trim%${XXX}}': Remove the white-space from the end of the string.
+    trim=${trim%${trim##*[![:space:]]}}
+
+    printf '%s\n' "$trim"
+}
+
+trim_all() {
+    # Usage: trim_all "   example   string    "
+
+    # Disable globbing to make the word-splitting below safe.
+    set -f
+
+    # Set the argument list to the word-splitted string.
+    # This removes all leading/trailing white-space and reduces
+    # all instances of multiple spaces to a single ("  " -> " ").
+    set -- $*
+
+    # Print the argument list as a string.
+    printf '%s\n' "$*"
+
+    # Re-enable globbing.
+    set +f
+}
+
+# check if string contains a sub string
+case $var in
+    *sub_string1*)
+        # Do stuff
+    ;;
+
+    *sub_string2*)
+        # Do other stuff
+    ;;
+
+    *)
+        # Else
+    ;;
+esac
+
+split() {
+    # Disable globbing.
+    # This ensures that the word-splitting is safe.
+    set -f
+
+    # Store the current value of 'IFS' so we
+    # can restore it later.
+    old_ifs=$IFS
+
+    # Change the field separator to what we're
+    # splitting on.
+    IFS=$2
+
+    # Create an argument list splitting at each
+    # occurance of '$2'.
+    #
+    # This is safe to disable as it just warns against
+    # word-splitting which is the behavior we expect.
+    # shellcheck disable=2086
+    set -- $1
+
+    # Print each list value on its own line.
+    printf '%s\n' "$@"
+
+    # Restore the value of 'IFS'.
+    IFS=$old_ifs
+
+    # Re-enable globbing.
+    set +f
+}
+
+# Setting 'IFS' tells 'read' where to split the string.
+while IFS='=' read -r key val; do
+    # Skip over lines containing comments.
+    # (Lines starting with '#').
+    [ "${key##\#*}" ] || continue
+
+    # '$key' stores the key.
+    # '$val' stores the value.
+    printf '%s: %s\n' "$key" "$val"
+
+    # Alternatively replacing 'printf' with the following
+    # populates variables called '$key' with the value of '$val'.
+    #
+    # NOTE: I would extend this with a check to ensure 'key' is
+    #       a valid variable name.
+    # export "$key=$val"
+    #
+    # Example with error handling:
+    # export "$key=$val" 2>/dev/null ||
+    #     printf 'warning %s is not a valid variable name\n' "$key"
+done < "file"
+
+head() {
+    # Usage: head "n" "file"
+    while IFS= read -r line; do
+        printf '%s\n' "$line"
+        i=$((i+1))
+        [ "$i" = "$1" ] && return
+    done < "$2"
+
+    # 'read' used in a loop will skip over
+    # the last line of a file if it does not contain
+    # a newline and instead contains EOF.
+    #
+    # The final line iteration is skipped as 'read'
+    # exits with '1' when it hits EOF. 'read' however,
+    # still populates the variable.
+    #
+    # This ensures that the final line is always printed
+    # if applicable.
+    [ -n "$line" ] && printf %s "$line"
+}
+
+lines() {
+    # Usage: lines "file"
+
+    # '|| [ -n "$line" ]': This ensures that lines
+    # ending with EOL instead of a newline are still
+    # operated on in the loop.
+    #
+    # 'read' exits with '1' when it sees EOL and
+    # without the added test, the line isn't sent
+    # to the loop.
+    while IFS= read -r line || [ -n "$line" ]; do
+        lines=$((lines+1))
+    done < "$1"
+
+    printf '%s\n' "$lines"
+}
