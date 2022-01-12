@@ -1,2 +1,2 @@
 #!/bin/sh
-echo "cd $(pwd)" | xclip
+echo "cd $(pwd)" | xclip -selection "clipboard"
