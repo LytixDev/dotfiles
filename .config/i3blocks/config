@@ -18,6 +18,12 @@ label=🎵
 #color=#82b741
 #label=💵
 
+[dailyviews]
+command=$dir/i3daily_views
+interval=once
+color=#82b741
+label=🔭
+
 [btcprice]
 command=$dir/i3checkbtc
 interval=once

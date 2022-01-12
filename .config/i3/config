@@ -228,3 +228,6 @@ bindsym XF86MonBrightnessDown $exnosup $scriptdir/change-backlight -10
 
 # set monitor config
 bindsym $mod+Ctrl+m $exnosup $scriptdir/setmonitors
+
+# toggle cursor
+bindsym $mod+Shift+T $exnosup pkill -USR1 -x xmousetoggle
