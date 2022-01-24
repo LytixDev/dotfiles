@@ -1,5 +1,5 @@
 *.font:	FiraMono Nerd Font:style=Regular:pixelsize=20:antialias=true:autohint=true;
-*.alpha: 0.97
+*.alpha: 0.90
 
 *.background:            #1b1d22
 *.foreground:            #e6e8ee

@@ -13,13 +13,14 @@ alias up="cd .."
 alias wttr="curl https://wttr.in"
 alias wttrtoday="curl v2d.wttr.in"
 alias dhps="cd ~/Documents/DHPS"
-alias sem1="cd ~/Skole/semester_1"
+alias sem2="cd ~/Skole/semester_2"
 alias v="nvim"
 alias untar="tar -xvzf"
 alias ymp3="youtube-dl -x --audio-format mp3 --prefer-ffmpeg"
+alias lsx="ls-x -a"
 
 # path
-export PATH=/home/nic/Scripts:$PATH
+export PATH=$HOME/Scripts:$HOME/Scripts/personal:$HOME/Scripts/bar:$PATH
 
 # enable colors
 autoload -U colors && colors
