@@ -76,3 +76,5 @@ case $choice in
         ;;
 esac
 
+# fix background after resolution has changed
+feh --bg-fill $HOME/Pictures/wallpapers/main.jpg
