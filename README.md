@@ -13,3 +13,5 @@
    - Packer and Vim-Plug to download packages
    - ALE as my main tool for linting
    - Language servers: pmd (java), pyright (python), clangd (c), shellcheck (bash).
+
+<img src="desktop.png">
