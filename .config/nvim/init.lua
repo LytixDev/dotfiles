@@ -18,13 +18,17 @@ Plug 'vim-scripts/AutoComplPop'
 Plug 'morhetz/gruvbox'
 Plug 'dense-analysis/ale'
 Plug 'lervag/vimtex'
+--Plug 'neovim/nvim-lspconfig'
+--Plug 'neovim/nvim-lsp'
+--Plug 'nvim-lua/completion-nvim'
+--Plug 'nvim-lua/diagnostic-nvim'
 
 vim.call('plug#end')
 
 -- set colorscheme and enable transparency
 vim.cmd('colorscheme gruvbox')
 vim.cmd('set background=dark')
-vim.cmd('hi Normal guibg=NONE ctermbg=NONE')
+--vim.cmd('hi Normal guibg=NONE ctermbg=NONE')
 
 -- autocomplete suggestions
 vim.cmd('set incsearch')
@@ -50,3 +54,21 @@ vim.cmd('let g:vimtex_view_method = "zathura"')
 -- following line. The default is usually fine and is the symbol "\".
 vim.cmd('let maplocalleader = ","')
 -- commands: ll -> start. lk -> stop. lc -> clear. lv -> forward
+
+
+-- nvim lsp
+--vim.cmd('let g:diagnostic_enable_virtual_text = 1')
+--vim.cmd("command! Format execute 'lua vim.lsp.buf.formatting()'")
+--
+--local nvim_lsp = require('nvim_lsp')
+--local on_attach = function(_, bufnr)
+--    require{'diagnostic'}.on_attach()
+--    require{'completion'}.on_attach()
+--end
+--local servers = {'clangd', 'pyright', 'pmd', 'shellshock'}
+--for _, lsp in ipairs(servers) do
+--    nvim_lsp[lsp].setup {
+--        on_attach = on_attach,
+--    }
+--end
+

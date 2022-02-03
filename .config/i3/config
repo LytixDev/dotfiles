@@ -6,17 +6,44 @@ set $scriptdir /home/nic/Scripts
 # set mod key to windows key
 set $mod Mod4
 
-# font bar
-#font pango:monospace 13
-font pango:Iosevka Term Light 13
+# font 
+#font pango:Iosevka Term Light 13
+font pango:Terminus (TTF) Medium 14
 
 # colors
+set $bar_background #ccc6b7
+set $bar_font #33302d
+set $bar_main #33302d
+set $bar_accent #d9d4c9
+set $border_focused #777b72
+set $border_unfocused #494b46
+
 # class                 border  backgr. text    indicator child_border
-client.focused          #4c7899 #285577 #ffffff #B0B3A1   #B0B3A1
+client.focused          $border_focused #285577 #ffffff #B0B3A1   #B0B3A1
 client.focused_inactive #333333 #5f676a #ffffff #484e50   #666C61
 client.unfocused        #333333 #222222 #888888 #292d2e   #1E292F
 client.urgent           #2f343a #900000 #ffffff #900000   #900000
 client.placeholder      #000000 #0c0c0c #ffffff #000000   #0c0c0c
+
+# i3blocks bar
+bar {
+    position top
+    status_command i3blocks
+    #i3bar_command i3bar --transparency
+    colors {
+        background $bar_background
+        separator  $bar_font
+        statusline $bar_font
+        # colorclass    border   background  text
+        focused_workspace  $bar_accent $bar_main $bar_accent
+        inactive_workspace #4d636a $bar_accent $bar_main
+        urgent_workspace   #900000 #900000 #ffffff
+        binding_mode       #900000 #900000 #ffffff
+        active_workspace   #4d636a #5f676a #ffffff
+    }
+    separator_symbol "|"
+    workspace_min_width 30
+}
 
 
 # xss-lock grabs a logind suspend inhibit lock and will use i3lock to lock the
@@ -143,26 +170,6 @@ mode "resize" {
 }
 
 bindsym $mod+r mode "resize"
-
-# i3blocks bar
-bar {
-    position top
-    status_command i3blocks
-    #i3bar_command i3bar --transparency
-    colors {
-        background #1E292F
-        separator  #B0B3A1 
-        statusline #D1DEBB
-        # colorclass    border   background  text
-        focused_workspace  #B0B3A1 #B0B3A1 #222222
-        active_workspace   #5f676a #5f676a #ffffff
-        inactive_workspace #222222 #222222 #B0B3A1
-        urgent_workspace   #900000 #900000 #ffffff
-        binding_mode       #900000 #900000 #ffffff
-    }
-    separator_symbol "|"
-    workspace_min_width 30
-}
 
 # wallpaper
 set $wallpaper /home/nic/Pictures/wallpapers/main.jpg

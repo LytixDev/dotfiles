@@ -21,20 +21,20 @@ label=🎵
 [dailyviews]
 command=$dir/i3daily_views
 interval=once
-color=#82b741
+color=#4a704b
 label=🔭
 
 [btcprice]
 command=$dir/i3checkbtc
 interval=once
 signal=30
-color=#82b741
+color=#4a704b
 label=💰
 
 [weather]
 command=$dir/i3weather
 interval=1800
-color=#A4C2F4
+color=#548a8e
 label=🌅
 
 [cputemp]
