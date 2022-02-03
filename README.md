@@ -14,4 +14,6 @@
    - ALE as my main tool for linting
    - Language servers: pmd (java), pyright (python), clangd (c), shellcheck (bash).
 
+I have my own gruvbox color scheme in gruvbox.vim. This usually resides in .vim/plugged/colors/gruvbox.vim or similar.
+
 <img src="desktop.png">
