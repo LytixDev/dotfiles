@@ -238,3 +238,7 @@ bindsym $mod+Ctrl+m $exnosup $scriptdir/setmonitors
 
 # toggle cursor
 bindsym $mod+Shift+T $exnosup pkill -USR1 -x xmousetoggle
+
+# toggle gaps
+bindsym $mod+g			gaps inner current plus 5
+bindsym $mod+Shift+g		gaps inner current minus 5
