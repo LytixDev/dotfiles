@@ -242,3 +242,5 @@ bindsym $mod+Shift+T $exnosup pkill -USR1 -x xmousetoggle
 # toggle gaps
 bindsym $mod+g			gaps inner current plus 5
 bindsym $mod+Shift+g		gaps inner current minus 5
+bindsym $mod+Ctrl+g		gaps inner all set 0; gaps outer all set 0
+bindsym $mod+Ctrl+0		gaps inner all set 18; gaps outer all set 5
