@@ -200,7 +200,8 @@ $exallnosup setxkbmap -layout no
 $exallnosup notify-send "Welcome back, Nicolai"
 
 # startup programs
-$exnosup picom
+#$exnosup picom
+$exnosup cmus-listener
 $exnosup dunst
 $exallnosup $scriptdir/get-btc-price
 $exnosup $scriptdir/setmonitors -s
