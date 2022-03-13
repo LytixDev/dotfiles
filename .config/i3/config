@@ -72,6 +72,9 @@ for_window [instance="cmus"] border pixel 5
 #$exnosup kitty --name cmus -o font_size=18 cmus
 $exnosup st -n cmus -e cmus
 
+# for javafx projects ran from intellij
+for_window [title="javafx"] floating enable
+
 # keybindings
 #bindsym $mod+Return $exnosup kitty
 bindsym $mod+Return $exnosup st

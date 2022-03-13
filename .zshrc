@@ -20,7 +20,7 @@ alias ymp3="youtube-dl -x --audio-format mp3 --prefer-ffmpeg"
 alias lsx="ls-x -a"
 
 # path
-export PATH=$HOME/Scripts:$HOME/Scripts/personal:$HOME/Scripts/bar:$PATH
+export PATH=$HOME/Scripts:$HOME/Scripts/personal:$HOME/Scripts/bar:$HOME/.local/bin:$PATH
 
 # enable colors
 autoload -U colors && colors
