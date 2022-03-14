@@ -204,7 +204,7 @@ $exallnosup notify-send "Welcome back, Nicolai"
 
 # startup programs
 #$exnosup picom
-$exnosup cmus-listener
+$exnosup cmus-listener > /dev/null
 $exnosup dunst
 $exallnosup $scriptdir/get-btc-price
 $exnosup $scriptdir/setmonitors -s

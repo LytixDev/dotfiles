@@ -12,6 +12,7 @@ cp $home/.config/i3blocks/config $upstream_dir/.config/i3blocks/config
 cp $home/.bash_profile $upstream_dir/.bash_profile
 cp $home/.bashrc $upstream_dir/.bashrc
 cp $home/.zshrc $upstream_dir/.zshrc
+cp $home/.zshenv $upstream_dir/.zshenv
 cp $home/.vimrc $upstream_dir/.vimrc
 cp $home/.xinitrc $upstream_dir/.xinitrc
 cp $home/.config/nvim/init.lua $upstream_dir/.config/nvim/init.lua
