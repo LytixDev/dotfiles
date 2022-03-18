@@ -81,6 +81,7 @@ bindsym $mod+Return $exnosup st
 bindsym $mod+b $exnosup firefox
 bindsym $mod+c $exnosup chromium
 bindsym $mod+s $exnosup $scriptdir/screenshot
+bindsym Print $exnosup $scriptdir/screenshot
 bindsym $mod+q kill
 bindsym $mod+d $exnosup i3-dmenu-desktop
 
