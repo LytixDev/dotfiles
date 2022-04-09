@@ -28,7 +28,7 @@ vim.call('plug#end')
 -- set colorscheme and enable transparency
 vim.cmd('colorscheme gruvbox')
 vim.cmd('set background=dark')
-vim.cmd('hi Normal guibg=NONE ctermbg=NONE')
+--vim.cmd('hi Normal guibg=NONE ctermbg=NONE')
 
 -- autocomplete suggestions
 vim.cmd('set incsearch')

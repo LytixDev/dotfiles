@@ -10,9 +10,9 @@ set $mod Mod4
 #font pango:Iosevka Term Light 13
 font pango:Terminus (TTF) Medium 14
 
-# colors main
-set $bar_background #2f3435
-set $bar_font #E6E8EE
+# colors
+set $bar_background #ccc6b7
+set $bar_font #33302d
 set $bar_main #33302d
 set $bar_accent #d9d4c9
 set $border_focused #777b72
@@ -74,9 +74,6 @@ $exnosup st -n cmus -e cmus
 
 # for javafx projects ran from intellij
 for_window [title="javafx"] floating enable
-#for_window [title="Floorball"] floating enable
-#for_window [title="Error"] floating enable
-#for_window [title="Confirmation"] floating enable
 
 # keybindings
 #bindsym $mod+Return $exnosup kitty
@@ -181,8 +178,8 @@ bindsym $mod+r mode "resize"
 # wallpaper
 set $wallpaper /home/nic/Pictures/wallpapers/main.jpg
 set $wallpaper_alt /home/nic/Pictures/wallpapers/alt.jpg
-bindsym $mod+w $exnosup feh --bg-fill $wallpaper_alt && xrdb ̃~/.Xresources
-bindsym $mod+Shift+w $exnosup feh --bg-fill $wallpaper && xrdb ~/.XresourcesALT
+bindsym $mod+w $exnosup feh --bg-fill $wallpaper_alt
+bindsym $mod+Shift+w $exnosup feh --bg-fill $wallpaper
 $exallnosup feh --bg-fill $wallpaper
 
 # shutdown / restart / suspend...
@@ -207,7 +204,7 @@ $exallnosup setxkbmap -layout no
 $exallnosup notify-send "Welcome back, Nicolai"
 
 # startup programs
-$exnosup picom
+#$exnosup picom
 $exnosup cmus-listener > /dev/null
 $exnosup dunst
 $exallnosup $scriptdir/get-btc-price
