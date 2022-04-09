@@ -1,5 +1,5 @@
 *.font:	Terminus (TTF):style=Medium:pixelsize=24:autohint=true;
-*.alpha: 1.0
+*.alpha: 0.95
 
 *.background:            #423a34
 *.foreground:            #eeeee4
