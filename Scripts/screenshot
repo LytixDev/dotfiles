@@ -4,4 +4,10 @@ dir="/home/nic/Pictures/screenshots"
 
 # if dir does not exist, create it
 mkdir -p $dir
-cd $dir && scrot && notify-send -t 1000 "Took screenshot succesfully" || notfy-send -t 1000 "Screenshot failed"
+name="$dir/$(date +"%Y-%m-%d-%H%M%S").png"
+
+scrot -F $name && notify-send -t 1000 "Took screenshot succesfully"
+echo $name | xclip -selection "clipboard"
+
+
+#cd $dir && scrot && notify-send -t 1000 "Took screenshot succesfully" || notfy-send -t 1000 "Screenshot failed"

@@ -74,9 +74,7 @@ $exnosup st -n cmus -e cmus
 
 # for javafx projects ran from intellij
 for_window [title="javafx"] floating enable
-#for_window [title="Floorball"] floating enable
-#for_window [title="Error"] floating enable
-#for_window [title="Confirmation"] floating enable
+for_window [title="An error occurred"] floating enable
 
 # keybindings
 #bindsym $mod+Return $exnosup kitty
@@ -180,7 +178,7 @@ bindsym $mod+r mode "resize"
 
 # wallpaper
 set $wallpaper /home/nic/Pictures/wallpapers/main.jpg
-set $wallpaper_alt /home/nic/Pictures/wallpapers/alt.jpg
+set $wallpaper_alt /home/nic/Pictures/wallpapers/alt2.jpg
 bindsym $mod+w $exnosup feh --bg-fill $wallpaper_alt && xrdb ̃~/.Xresources
 bindsym $mod+Shift+w $exnosup feh --bg-fill $wallpaper && xrdb ~/.XresourcesALT
 $exallnosup feh --bg-fill $wallpaper

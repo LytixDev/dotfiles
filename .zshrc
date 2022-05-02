@@ -18,6 +18,7 @@ alias v="nvim"
 alias untar="tar -xvzf"
 alias ymp3="youtube-dl -x --audio-format mp3 --prefer-ffmpeg"
 alias lsx="ls-x -a"
+alias ttest="cd Documents/tomatoshell/ && ./configure install && tomatoshell -f -t 0.05"
 
 # path
 export PATH=$HOME/Scripts:$HOME/Scripts/personal:$HOME/Scripts/bar:$HOME/.local/bin:$PATH

@@ -1,4 +1,9 @@
 #!/bin/sh
+cloudy="☁️"
+sunny_clear="☀️"
+snow="🌨"
+rain_shower="🌧"
+negative="❄️"
 
 case $BLOCK_BUTTON in
     1)
