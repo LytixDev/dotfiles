@@ -1,2 +1,5 @@
-#!/bin/sh
-echo "cd $(pwd)" | xclip -selection "clipboard"
+#!/bin/env bash
+
+# Starts a new terminal instance from the same path as it's executed from
+
+coproc $TERMINAL -e zsh -c "cd $(pwd); zsh"
