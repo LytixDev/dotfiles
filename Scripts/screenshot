@@ -6,7 +6,7 @@ dir="/home/nic/Pictures/screenshots"
 mkdir -p $dir
 name="$dir/$(date +"%Y-%m-%d-%H%M%S").png"
 
-scrot -F $name && notify-send -t 1000 "Took screenshot succesfully"
+scrot -F $name #&& notify-send -t 1000 "Took screenshot succesfully"
 echo $name | xclip -selection "clipboard"
 
 
