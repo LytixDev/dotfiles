@@ -1,11 +1,10 @@
 #!/bin/sh
 # Script that lets me choice what monitor configuration I want to use
 # Starts on x login
+# Nicolai Brand (lytixdev) 2021-2022
 
 intern="eDP1"
 extern="HDMI1"
-term_conf="/home/nic/.config/kitty"
-dpi=95
 flag=$1  # -s flag, -> only show if external monitor is connected
 
 # if external monitor not connected, exit
@@ -16,72 +15,67 @@ then
     [ $exit_code -eq 1 ] && notify-send "$extern is not connected" && exit 0
 fi
 
-choice=$(printf "intern\ncubicle\nextern1080p+intern\nextern1440p+intern\nextern4k+intern\nmirror1080p\nextern1080p\nextern1440p\nsmart\n" | dmenu)
+choice=$(printf "extern4k\nintern\nextern1080p+intern\nextern1440p+intern\nextern4k+intern\nmirror1080p\nextern1080p\nextern1440p\nsmart\n" | dmenu)
 
 case $choice in
     "intern")
-        xrandr --output $extern --dpi $dpi --off &&
-        xrandr --output $intern --dpi $dpi --auto --primary &&
-        cp $term_conf/kitty_std.conf $term_conf/kitty.conf
-        ;;
-
-    "cubicle")
-        xrandr --output $intern -off
-        xrandr --output DP3 --mode 3840x1200 --set audio force-dvi
-        #xrandr --output eDP1 --off --output DP1 --off --output DP2 --off --output DP3 --primary --mode 3840x1200 --set aduio force-dvi --pos 0x0 --rotate normal --output DP4 --off --output HDMI1 --off --output HDMI2 --off --output HDMI3 --off --output VIRTUAL1 --off
+        xrandr --output $extern --off &&
+        xrandr --output $intern --auto --primary &&
+	xrdb ~/.Xresources
         ;;
 
     "extern1440p")
         xrandr | grep -q "$extern connected" && 
-        xrandr --output $extern --dpi $dpi --set audio force-dvi --mode "2560x1440" --primary &&
-        xrandr --output $intern --dpi $dpi --off &&
-        cp $term_conf/kitty_hdpi.conf $term_conf/kitty.conf ||
-        notify-send "Monitor $extern not connected"
+        xrandr --output $extern --mode "2560x1440" --primary &&
+        xrandr --output $intern --off &&
+	xrdb ~/.Xresources ||
+        notify-send "Error changing monitor config" 
         ;;
         
     "extern1080p+intern")
         xrandr | grep -q "$extern connected" &&
-        xrandr --output $extern --dpi $dpi --set audio force-dvi --mode "1920x1080" --primary &&
-        xrandr --output $intern --dpi $dpi --auto --output $extern --left-of $intern &&
-        cp $term_conf/kitty_std.conf $term_conf/kitty.conf ||
-        notify-send "Monitor $extern not connected"
+        xrandr --output $extern --mode "1920x1080" --primary &&
+        xrandr --output $intern --auto --output $extern --left-of $intern &&
+	xrdb ~/.Xresources ||
+        notify-send "Error changing monitor config"
         ;;
 
     "extern1440p+intern")
         xrandr | grep -q "$extern connected" &&
-        xrandr --output $intern --dpi $dpi --auto --output $extern --left-of $intern &&
-        cp $term_conf/kitty_hdpi.conf $term_conf/kitty.conf ||
-        notify-send "Monitor $extern not connected" 
+        xrandr --output $intern --auto --output $extern --left-of $intern &&
+	xrdb ~/.Xresources ||
+        notify-send "Error changing monitor config"
         ;;
 
-    "extern4k+intern")
+    "extern4k")
         xrandr | grep -q "$extern connected" &&
-        xrandr --output $extern --dpi $dpi --set audio force-dvi --mode "3840x2160" --primary &&
-        xrandr --output $intern --dpi $dpi --auto --output $extern --left-of $intern &&
-        cp $term_conf/kitty_hdpi.conf $term_conf/kitty.conf ||
-        notify-send "Monitor $extern not connected"
+	xrandr --output $extern --primary --mode 3840x2160 --pos 0x0 --rotate normal &&
+	xrandr --output $intern --off &&
+	xrdb ~/.XresourcesHiDPI ||
+        notify-send "Error changing monitor config"
         ;;
 
     "mirror1080p")
         xrandr | grep -q "$extern connected" &&
-        xrandr --output $extern --dpi $dpi --set audio force-dvi --mode "1920x1080" &&
-        cp $term_conf/kitty_std.conf $term_conf/kitty.conf ||
-        notify-send "Monitor $extern not connected"
+        xrandr --output $extern --mode "1920x1080" &&
+	xrdb ~/.Xresources ||
+        notify-send "Error changing monitor config"
         ;;
 
     "extern1080p")
         xrandr | grep -q "$extern connected" && 
-        xrandr --output $extern --dpi $dpi --set audio force-dvi --mode "1920x1080" --primary &&
-        xrandr --output $intern --dpi $dpi --off &&
-        cp $term_conf/kitty_std.conf $term_conf/kitty.conf ||
-        notify-send "Monitor $extern not connected"
+        xrandr --output $extern --mode "1920x1080" --primary &&
+        xrandr --output $intern --off &&
+	xrdb ~/.Xresources &&
+        notify-send "Error changing monitor config"
         ;;
 
     "smart")
         xrandr --auto
-        cp $term_conf/kitty_std.conf $term_conf/kitty.conf
+	xrdb ~/.Xresources
         ;;
 esac
 
-# fix background after resolution has changed
-feh --bg-fill $HOME/Pictures/wallpapers/main.jpg
+# reload i3 to make changes in .Xresources take effect
+sleep 0.5
+i3-msg reload
