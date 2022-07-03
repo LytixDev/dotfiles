@@ -6,6 +6,7 @@
 intern="eDP1"
 extern="HDMI1"
 flag=$1  # -s flag, -> only show if external monitor is connected
+HiDPI=0
 
 # if external monitor not connected, exit
 if [ "$flag" = "-s" ]
@@ -20,62 +21,65 @@ choice=$(printf "extern4k\nintern\nextern1080p+intern\nextern1440p+intern\nexter
 case $choice in
     "intern")
         xrandr --output $extern --off &&
-        xrandr --output $intern --auto --primary &&
-	xrdb ~/.Xresources
+        xrandr --output $intern --auto --primary
         ;;
 
     "extern1440p")
         xrandr | grep -q "$extern connected" && 
         xrandr --output $extern --mode "2560x1440" --primary &&
-        xrandr --output $intern --off &&
-	xrdb ~/.Xresources ||
+        xrandr --output $intern --off ||
         notify-send "Error changing monitor config" 
         ;;
         
     "extern1080p+intern")
         xrandr | grep -q "$extern connected" &&
         xrandr --output $extern --mode "1920x1080" --primary &&
-        xrandr --output $intern --auto --output $extern --left-of $intern &&
-	xrdb ~/.Xresources ||
+        xrandr --output $intern --auto --output $extern --left-of $intern ||
         notify-send "Error changing monitor config"
         ;;
 
     "extern1440p+intern")
         xrandr | grep -q "$extern connected" &&
-        xrandr --output $intern --auto --output $extern --left-of $intern &&
-	xrdb ~/.Xresources ||
+        xrandr --output $intern --auto --output $extern --left-of $intern ||
         notify-send "Error changing monitor config"
         ;;
 
     "extern4k")
         xrandr | grep -q "$extern connected" &&
 	xrandr --output $extern --primary --mode 3840x2160 --pos 0x0 --rotate normal &&
-	xrandr --output $intern --off &&
-	xrdb ~/.XresourcesHiDPI ||
+	HiDPI=1 ||
         notify-send "Error changing monitor config"
         ;;
 
     "mirror1080p")
         xrandr | grep -q "$extern connected" &&
-        xrandr --output $extern --mode "1920x1080" &&
-	xrdb ~/.Xresources ||
+        xrandr --output $extern --mode "1920x1080" ||
         notify-send "Error changing monitor config"
         ;;
 
     "extern1080p")
         xrandr | grep -q "$extern connected" && 
         xrandr --output $extern --mode "1920x1080" --primary &&
-        xrandr --output $intern --off &&
-	xrdb ~/.Xresources &&
+        xrandr --output $intern --off ||
         notify-send "Error changing monitor config"
         ;;
 
     "smart")
         xrandr --auto
-	xrdb ~/.Xresources
         ;;
 esac
 
+if [ $HiDPI -eq 1 ]
+then
+	xrdb ~/.XresourcesHiDPI
+	i3-msg gaps outer current set 15
+	i3-msg gaps inner current set 15
+else
+	xrdb ~/.Xresources
+	i3-msg gaps outer current set 0
+	i3-msg gaps inner current set 0
+fi
+
 # reload i3 to make changes in .Xresources take effect
-sleep 0.5
+sleep 1
 i3-msg reload
