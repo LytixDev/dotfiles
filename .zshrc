@@ -6,22 +6,22 @@
 # aliases
 alias ls="ls --color=auto"
 alias flux="redshift -l 63:10"
-#alias vcpt="ffmpeg -f x11grab -i :0.0 -f alsa -ac 2 -i hw:0 output1.mp4"
-alias vcpt="ffmpeg -f x11grab -i :0.0 -f pulse -i 4 output.mp4"
 alias update="sudo pacman -Syyu"
-alias up="cd .."
 alias wttr="curl https://wttr.in"
 alias wttrtoday="curl v2d.wttr.in"
-alias dhps="cd ~/Documents/DHPS"
-alias sem2="cd ~/Skole/semester_2"
 alias v="nvim"
 alias untar="tar -xvzf"
 alias ymp3="youtube-dl -x --audio-format mp3 --prefer-ffmpeg"
-alias lsx="ls-x -a"
 alias val="cd Documents/valery; ./build.sh && ./valery"
 alias clip='xclip -selection "clipboard"'
+alias halt="sudo halt"
+alias poweroff="sudo poweroff"
+alias reboot="sudo reboot"
+alias shutdown="sudo shutdown"
+alias zzz="sudo zzz"
+
 # path
-export PATH=$HOME/Scripts:$HOME/Scripts/personal:$HOME/Scripts/bar:$HOME/.local/bin:$HOME/go/bin:$PATH
+export PATH=$PATH:$HOME/Scripts
 
 # enable colors
 autoload -U colors && colors
@@ -104,6 +104,11 @@ precmd() { echo -ne '\e[5 q' ;} # Use beam shape cursor for each new prompt.
 bindkey -s "^h" "history 1\n"
 bindkey -s "^l" "clear\n"
 
+
+# enable spaceship prompt
+autoload -U promptinit; promptinit
+prompt spaceship
+
 # spaceship config
 SPACESHIP_PROMPT_ADD_NEWLINE=false
 SPACESHIP_PROMPT_SEPARATE_LINE=true
@@ -133,9 +138,5 @@ SPACESHIP_TERRAFORM_SHOW=false
 SPACESHIP_VI_MODE_SHOW=false
 SPACESHIP_JOBS_SHOW=false
 
-# spaceship prompt
-autoload -U promptinit; promptinit
-prompt spaceship
-
 # syntax highlight
-source /home/nic/Downloads/dont-delete/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh

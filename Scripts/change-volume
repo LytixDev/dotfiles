@@ -1,5 +1,10 @@
 #!/bin/sh
-vol=$(amixer sget Master | awk '/^..Mono/ {print $4}' | sed 's/\[//; s/\]//; s/\%//')
+# Nicolai Brand (lytixdev) 2021-2022
+
+# if config has mono channel use this
+#vol=$(amixer sget Master | awk '/^..Mono/ {print $4}' | sed 's/\[//; s/\]//; s/\%//')
+# if config does not have mono chanel, use this
+vol=$(amixer sget Master | awk '/^..Front Left/ {print $5}'  | sed 's/\[//; s/\]//; s/\%//')
 new_vol=$(($vol + $1))
 
 [ $new_vol -le 0 ] && new_vol=0

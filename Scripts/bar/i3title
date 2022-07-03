@@ -1,0 +1,7 @@
+#!/bin/sh
+
+# Nicolai Brand (lytixdev) 2022
+
+xdotool getactivewindow getwindowname
+
+#https://www.reddit.com/r/i3wm/comments/gl73ni/window_title_in_i3_bar/

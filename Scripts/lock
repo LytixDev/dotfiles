@@ -1,11 +1,11 @@
-#!/bin/bash
+#!/bin/sh
+# Nicolai Brand (lytixdev) 2021-2022
 
 IMAGE=/tmp/i3lock.png
-LOCK=~/Pictures/lockr.png
-SCREENSHOT="scrot $IMAGE"
+LOCK=~/Pictures/lock.png
 BLURTYPE="2x8"
 
-$SCREENSHOT
+scrot $IMAGE
 convert $IMAGE -blur $BLURTYPE $IMAGE
 convert $IMAGE $LOCK -gravity center -composite $IMAGE
 i3lock -i $IMAGE

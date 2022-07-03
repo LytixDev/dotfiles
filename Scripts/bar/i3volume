@@ -1,2 +1,8 @@
 #!/bin/sh
-amixer sget Master | awk '/^..Mono/ {print $6 $4}' | sed 's/\[on\]/🔊/; s/\[off\]/🔇/; s/\[//; s/\]//'
+# Nicolai Brand (lytixdev) 2021 - 2022
+
+# amixer sget Master | awk '/^..Mono/ {print $6 $4}' | sed 's/\[on\]/🔊/; s/\[off\]/🔇/; s/\[//; s/\]//'
+
+# when no mono channel, get left channel information and assume right channel is the same
+amixer sget Master | awk '/^..Front Left/ { print $6 $5 }' | sed 's/\[on\]/🔊/; s/\[o^C\]/🔇/; s/\[//; s/\]//'
+

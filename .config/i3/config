@@ -2,12 +2,12 @@
 set $exnosup exec --no-startup-id
 set $exallnosup exec_always --no-startup-id
 set $scriptdir /home/nic/Scripts
+set $term st
 
 # set mod key to windows key
 set $mod Mod4
 
 # font 
-#font pango:Iosevka Term Light 13
 font pango:Terminus (TTF) Medium 14
 
 # colors main
@@ -62,24 +62,16 @@ for_window [instance="dropdown"] floating enable
 for_window [instance="dropdown"] resize set 700 400
 for_window [instance="dropdown"] move scratchpad
 for_window [instance="dropdown"] border pixel 5
-#$exnosup kitty --name dropdown
-$exnosup st -n dropdown
+$exnosup $term -n dropdown
 
 for_window [instance="cmus"] floating enable
 for_window [instance="cmus"] resize set 1000 600
 for_window [instance="cmus"] move scratchpad
 for_window [instance="cmus"] border pixel 5
-#$exnosup kitty --name cmus -o font_size=18 cmus
-$exnosup st -n cmus -e cmus
-
-# for javafx projects ran from intellij
-for_window [title="javafx"] floating enable
-for_window [title="An error occurred"] floating enable
-for_window [title="Choose which army to load into"] floating enable
+$exnosup $term -n cmus -e cmus
 
 # keybindings
-#bindsym $mod+Return $exnosup kitty
-bindsym $mod+Return $exnosup st
+bindsym $mod+Return $exnosup $term
 bindsym $mod+b $exnosup firefox
 bindsym $mod+c $exnosup chromium
 bindsym $mod+s $exnosup $scriptdir/screenshot
@@ -190,10 +182,8 @@ set $mode_system System (l) lock, (e) logout, (r) reboot, (h) hibernate, (CTRL+s
 mode "$mode_system" {
     bindsym l $exnosup bash $scriptdir/lock, mode "default"
     bindsym e $exnosup i3-msg exit, mode "default"
-    bindsym r $exnosup systemctl reboot, mode "default"
-    bindsym h $exnosup $i3lockwall && systemctl hibernate, mode "default"
-    bindsym Ctrl+s $exnosup systemctl poweroff -i, mode "default"
-
+    bindsym r $exnosup sudo reboot, mode "default"
+    bindsym Ctrl+s $exnosup sudo poweroff, mode "default"
     bindsym Escape mode "default"
 }
 
@@ -213,10 +203,10 @@ $exallnosup $scriptdir/get-btc-price
 $exnosup $scriptdir/setmonitors -s
 
 # gaps
-gaps outer 5
-gaps inner 18
-#gaps outer 0
-#gaps inner 0
+#gaps outer 5
+#gaps inner 18
+gaps outer 0
+gaps inner 0
 
 new_window pixel 5
 

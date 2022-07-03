@@ -1,40 +1,17 @@
 dir=/home/nic/Scripts/bar
 
-#[chess]
-#command=$dir/i3sesse
-#interval=120
-#label=♟️
-
 [cursong]
 command=$dir/i3current_song
 interval=once
 signal=20
 label=🎵
 
-[discord]
-command=$dir/i3discord
-signal=40
-interval=once
-
-#[stonkvalue]
-#command=/home/nic/Scripts/stonks/stonkprice.sh
+#[btcprice]
+#command=$dir/i3checkbtc
 #interval=once
-#signal=40
-#color=#82b741
-#label=💵
-
-[dailyviews]
-command=$dir/i3daily_views
-interval=once
-color=#4a704b
-label=🔭
-
-[btcprice]
-command=$dir/i3checkbtc
-interval=once
-signal=30
-color=#4a704b
-label=💰
+#signal=30
+#color=#4a704b
+#label=💰
 
 [weather]
 command=$dir/i3weather

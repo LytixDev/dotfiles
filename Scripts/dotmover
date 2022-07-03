@@ -1,20 +1,19 @@
 #!/bin/sh
-home="/home/nic"
-upstream_dir="/home/nic/Documents/dotfiles-upstream/.files"
-cp $home/Scripts/* $upstream_dir/Scripts
-cp $home/Scripts/bar/* $upstream_dir/Scripts/bar
-cp $home/.config/picom.conf $upstream_dir/.config/
-cp -r $home/.config/kitty/ $upstream_dir/.config/
-cp $home/.config/dunst/dunstrc $upstream_dir/.config/dunst/dunstrc
-cp $home/.config/i3/config $upstream_dir/.config/i3/config
-cp $home/.config/i3blocks/config $upstream_dir/.config/i3blocks/config
+upstream_dir="$HOME/Documents/projects/dotfiles/"
+cp $HOME/Scripts/* $upstream_dir/Scripts
+cp $HOME/Scripts/bar/* $upstream_dir/Scripts/bar
+cp $HOME/.config/picom.conf $upstream_dir/.config/
+cp -r $HOME/.config/kitty/ $upstream_dir/.config/
+cp $HOME/.config/dunst/dunstrc $upstream_dir/.config/dunst/dunstrc
+cp $HOME/.config/i3/config $upstream_dir/.config/i3/config
+cp $HOME/.config/i3blocks/config $upstream_dir/.config/i3blocks/config
 
-cp $home/.bash_profile $upstream_dir/.bash_profile
-cp $home/.bashrc $upstream_dir/.bashrc
-cp $home/.zshrc $upstream_dir/.zshrc
-cp $home/.zshenv $upstream_dir/.zshenv
-cp $home/.vimrc $upstream_dir/.vimrc
-cp $home/.xinitrc $upstream_dir/.xinitrc
-cp $home/.config/nvim/init.lua $upstream_dir/.config/nvim/init.lua
-cp -r $home/.config/nvim/lua/* $upstream_dir/.config/nvim/lua
-cp $home/.Xresources $upstream_dir/.Xresources
+cp $HOME/.bash_profile $upstream_dir/.bash_profile
+cp $HOME/.bashrc $upstream_dir/.bashrc
+cp $HOME/.zshrc $upstream_dir/.zshrc
+cp $HOME/.zshenv $upstream_dir/.zshenv
+cp $HOME/.vimrc $upstream_dir/.vimrc
+cp $HOME/.xinitrc $upstream_dir/.xinitrc
+cp $HOME/.config/nvim/init.lua $upstream_dir/.config/nvim/init.lua
+cp -r $HOME/.config/nvim/lua/* $upstream_dir/.config/nvim/lua
+cp $HOME/.Xresources $upstream_dir/.Xresources
