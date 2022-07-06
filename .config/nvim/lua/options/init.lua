@@ -1,32 +1,36 @@
--- remaps
-vim.cmd('vnoremap <C-c> "+y')
-vim.cmd('map <C-p> "+p')
-vim.cmd('map <space>f :Telescope find_files<cr>')
-vim.cmd('map <space>g :Telescope live_grep<cr>')
-vim.cmd('map j gj')
-vim.cmd('map k gk')
+-- no bs files
+vim.opt.swapfile = false
+vim.opt.backup = false
+vim.opt.writebackup = false
+
+-- access to global clipboard
+vim.opt.clipboard = "unnamedplus"
 
 -- tab
-vim.o.tabstop = 8
-vim.o.softtabstop = 0
-vim.o.expandtab = true
-vim.o.shiftwidth = 4
-vim.o.smarttab = true
+vim.opt.showtabline = 4
+vim.opt.smartcase = true
+vim.opt.smartindent = true
+vim.opt.expandtab = true
+vim.opt.shiftwidth = 4
+vim.opt.tabstop = 8
 
--- less pain
-vim.o.nu = true
-vim.o.relativenumber = true
 -- no auto comment on next line
 vim.cmd('autocmd VimEnter * setlocal formatoptions-=c formatoptions-=r formatoptions-=o')
-vim.cmd('set nowrap')
-vim.opt.termguicolors = true
-vim.o.showmode = false
-vim.o.scrolloff = 3
 
--- remove backup
-vim.o.backup = false
-vim.o.writebackup = false
-
--- enable system clipboard
-vim.o.clipboard = "unnamedplus"
-
+-- misc
+vim.opt.splitright = true
+vim.opt.completeopt = { "menuone", "noselect" }
+vim.opt.conceallevel = 0
+vim.opt.fileencoding = "utf-8"
+vim.opt.hlsearch = true
+vim.opt.pumheight = 8
+vim.opt.number = true
+vim.opt.relativenumber = true
+vim.opt.signcolumn = "yes"
+vim.opt.wrap = false
+vim.opt.scrolloff = 8
+vim.opt.sidescrolloff = 8
+vim.opt.numberwidth = 4
+--vim.opt.termguicolors = true
+vim.cmd [[set iskeyword+=-]]
+vim.opt.termguicolors = true;
