@@ -47,6 +47,7 @@ case $choice in
     "extern4k")
         xrandr | grep -q "$extern connected" &&
 	xrandr --output $extern --primary --mode 3840x2160 --pos 0x0 --rotate normal &&
+	xrandr --output $intern --off &&
 	HiDPI=1 ||
         notify-send "Error changing monitor config"
         ;;
@@ -72,14 +73,20 @@ esac
 if [ $HiDPI -eq 1 ]
 then
 	xrdb ~/.XresourcesHiDPI
-	i3-msg gaps outer current set 15
-	i3-msg gaps inner current set 15
 else
 	xrdb ~/.Xresources
-	i3-msg gaps outer current set 0
-	i3-msg gaps inner current set 0
 fi
 
 # reload i3 to make changes in .Xresources take effect
-sleep 1
+sleep 3
 i3-msg reload
+
+# update gaps
+if [ $HiDPI -eq 1 ]
+then
+	i3-msg gaps outer all set 15
+	i3-msg gaps inner all set 15
+else
+	i3-msg gaps outer all set 0
+	i3-msg gaps inner all set 0
+fi
