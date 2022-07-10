@@ -11,15 +11,15 @@ set $mod Mod4
 font pango:Terminus (TTF) Medium 14
 
 # colors main
-set $bar_background #2f3435
+set $bar_background #2B302E
 set $bar_font #E6E8EE
-set $bar_main #33302d
+set $bar_main #2e6457
 set $bar_accent #d9d4c9
-set $border_focused #777b72
+set $border_focused #467761
 set $border_unfocused #494b46
 
 # class                 border  backgr. text    indicator child_border
-client.focused          $border_focused #285577 #ffffff #B0B3A1   #B0B3A1
+client.focused          #2e6457 #285577 #ffffff #2e5457   #2e6457
 client.focused_inactive #333333 #5f676a #ffffff #484e50   #666C61
 client.unfocused        #333333 #222222 #888888 #292d2e   #1E292F
 client.urgent           #2f343a #900000 #ffffff #900000   #900000
@@ -44,7 +44,6 @@ bar {
     separator_symbol "|"
     workspace_min_width 30
 }
-
 
 # xss-lock grabs a logind suspend inhibit lock and will use i3lock to lock the
 # screen before suspend. Use loginctl lock-session to lock your screen.
@@ -124,6 +123,7 @@ set $ws7 "7"
 set $ws8 "8"
 set $ws9 "9"
 set $ws10 "10"
+set $wstitle "title"
 
 # switch to workspace
 bindsym $mod+1 workspace number $ws1
@@ -172,12 +172,12 @@ bindsym $mod+r mode "resize"
 # wallpaper
 set $wallpaper /home/nic/Pictures/wallpapers/main.jpg
 set $wallpaper_alt /home/nic/Pictures/wallpapers/alt.jpg
-bindsym $mod+w $exnosup feh --bg-fill $wallpaper_alt && xrdb ̃~/.Xresources
-bindsym $mod+Shift+w $exnosup feh --bg-fill $wallpaper && xrdb ~/.XresourcesALT
+bindsym $mod+w $exnosup feh --bg-fill $wallpaper_alt
+bindsym $mod+Shift+w $exnosup feh --bg-fill $wallpaper
 $exallnosup feh --bg-fill $wallpaper
 
 # shutdown / restart / suspend...
-set $mode_system System (l) lock, (e) logout, (r) reboot, (h) hibernate, (CTRL+s) shutdown
+set $mode_system System (l) lock, (e) logout, (r) reboot, (CTRL+s) shutdown
 
 mode "$mode_system" {
     bindsym l $exnosup bash $scriptdir/lock, mode "default"
@@ -197,7 +197,7 @@ $exallnosup notify-send "Welcome back, Nicolai"
 
 # startup programs
 $exnosup picom
-$exnosup cmus-listener > /dev/null
+#$exnosup cmus-listener > /dev/null
 $exnosup dunst
 $exallnosup $scriptdir/get-btc-price
 $exnosup $scriptdir/setmonitors -s
