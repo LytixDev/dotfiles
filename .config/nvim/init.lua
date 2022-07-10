@@ -9,4 +9,3 @@ require "lsp"
 vim.cmd 'colorscheme gruvbox'
 vim.cmd('set background=dark')
 vim.cmd('hi Normal guibg=NONE ctermbg=NONE')
-
