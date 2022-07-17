@@ -19,6 +19,8 @@ alias poweroff="sudo poweroff"
 alias reboot="sudo reboot"
 alias shutdown="sudo shutdown"
 alias zzz="sudo zzz"
+alias p="cd ~/Documents/projects/"
+alias pg="cd ~/Documents/programs/"
 
 # path
 export PATH=$PATH:$HOME/Scripts

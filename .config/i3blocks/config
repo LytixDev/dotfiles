@@ -1,10 +1,16 @@
 dir=/home/nic/Scripts/bar
 
-[cursong]
-command=$dir/i3current_song
-interval=once
-signal=20
-label=🎵
+#[title]
+#align=left
+#command=$dir/i3title
+#interval=1
+#signal=40
+
+#[cursong]
+#command=$dir/i3current_song
+#interval=once
+#signal=20
+#label=🎵
 
 #[btcprice]
 #command=$dir/i3checkbtc

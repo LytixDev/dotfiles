@@ -10,6 +10,8 @@
 - Webrowser: firefox (main), chromium
 - Text editor: neovim
 
+[screenshot](bg.png)
+
 ## Extra
 To get natural scrolling and tapping on touchpad, copy 40-touchpad.conf to /usr/share/X11/xorg.conf.d/40-touchpad.conf.
 
