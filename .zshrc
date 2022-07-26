@@ -25,6 +25,8 @@ alias pg="cd ~/Documents/programs/"
 # path
 export PATH=$PATH:$HOME/Scripts
 
+export DEBUGINFOD_URLS="https://debuginfod.archlinux.org"
+
 # enable colors
 autoload -U colors && colors
 
