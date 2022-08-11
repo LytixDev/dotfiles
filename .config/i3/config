@@ -67,7 +67,8 @@ for_window [instance="cmus"] floating enable
 for_window [instance="cmus"] resize set 1000 600
 for_window [instance="cmus"] move scratchpad
 for_window [instance="cmus"] border pixel 5
-$exnosup $term -n cmus -e cmus
+#$exnosup $term -n cmus -e cmus
+$exnosup $term -n cmus
 
 # keybindings
 bindsym $mod+Return $exnosup $term
