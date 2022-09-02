@@ -1,0 +1,90 @@
+#!/bin/bash
+
+# writen by Nicolai H. Brand (lytix.dev) 2022
+# Artix linux with runit on an efi system installation script.
+# Run after mounting the root partition on /mnt and boot partition on /mnt/boot/efi
+
+# Note on runit:
+# Available services can be found in /etc/runit/sv
+# To start a service, link a service in /etc/runit/sv to /run/runit/service
+
+HOSTNAME="artix"
+USERNAME="nic"
+
+# do amd-ucode if on an amd cpu instead of intel-ucode
+basestrap /mnt base base-devel runit elogind-runit linux linux-firmware vim intel-ucode
+
+# generate file system tables using uuid
+fstabgen -U /mnt >> /mnt/etc/fstab
+
+# chroot into the installation
+artix-chroot /mnt
+
+# set timezone to Oslo
+ln -sf /usr/share/zoneinfo/Europe/Oslo /etc/localtime
+
+# sync hwc
+hwclock --systohc
+
+# locale
+echo "en_US.UTF-8 UTF-8" >> /etc/locale.gen
+echo "LANG=en_US.UTF-8" >> /etc/locale.conf
+locale-gen
+
+# hostname
+echo "$HOSTNAME" > /etc/hostname
+echo -n "127.0.0.1\tlocalhost" >> /etc/hosts
+echo -n "::1\tlocalhost" >> /etc/hosts
+echo -n "127.0.1.1\t"$HOSTNAME".localdomain\t"$HOSTNAME"" >> /etc/hosts
+
+# set password
+passwd
+
+# install needed packages
+pacman -S grub efibootmgr networkmanager networkmanager-runit network-manager-applet dosfstools linux-headers bluez bluez-runit bluez-utils cups cups-runit xdg-utils xdg-user-dirs
+
+# install bootloader
+grub-install --target=x86_64-efi --efi-directory=/boot/efi --bootloader-id=GRUB
+grub-mkconfig -o /boot/grub/grub.cfg
+
+# create user
+useradd -mG wheel "$USERNAME"
+passwd "$USERNAME"
+# TODO: give wheel group sudo access
+
+exit
+
+# unmount disks
+umount -R /mnt
+
+reboot
+
+# TODO: log in as the newly created user
+
+# enable service and start it right away
+ln -s /etc/runit/sv/NetworkManager /run/runit/service/NetworkManager
+ln -s /etc/runit/sv/bluetoothd /run/runit/service/bluetoothd
+ln -s /etc/runit/sv/cupsd /run/runit/service/cupsd
+
+# TODO: connect to internet using nmtui
+
+# install more needed packages
+# use amdgup or nvidia over intel on those gpus
+pacman -S xf86-video-intel xorg --ignore xorg-server-xdmx xorg-xinit i3-gaps firefox git
+
+# set keyboard layout
+echo "KEYMAP=no-latin1" > /etc/vconsole.conf
+
+# create directories
+mkdir -p ~/Documents/projects
+mkdir ~/Documents/programs
+mkdir ~/Scripts
+mkdir ~/School
+mkdir ~/Media
+mkdir ~/Pictures
+
+# clone dotfiles
+git clone "https://github.com/lytixdev/dotfiles.git"
+
+# TODO: setup arch repos for artix
+# TODO: setup dotfiles

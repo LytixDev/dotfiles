@@ -1,129 +1,125 @@
-acpilight 1.2-2
-alsa-utils 1.2.7-1
-arandr 0.1.10-7
-artix-archlinux-support 2-1
-autoconf 2.71-1
-automake 1.16.5-1
-base 2-2.11
-binutils 2.38-6
-bison 3.8.2-4
-bluez 5.64-2
-bluez-runit 20180226-5
-bluez-utils 5.64-2
-chromium 103.0.5060.114-1
-clang 14.0.6-1
-cups 1:2.4.2-3
-cups-runit 20180226-3
-dmenu 5.1-1
-dosfstools 4.2-2
-dunst 1.9.0-1
-efibootmgr 17-2
-elogind-runit 20220508-1
-esysusers 251.2-2
-etmpfiles 251.2-2
-fakeroot 1.29-1
-feh 3.9-1
-file 5.42-1
-findutils 4.9.0-1
-firefox 102.0-1
-flex 2.6.4-3.1
-fontpreview 1.0.6-2
-gawk 5.1.1-1
-gcc 12.1.0-2
-gettext 0.21-2
-gimp 2.10.32-1
-git 2.37.0-1
-grep 3.7-1
-groff 1.22.4-7
-grub 2:2.06.r261.g2f4430cc0-1
-gzip 1.12-1
-htop 3.2.1-1
-i3-gaps 4.20.1-2
-i3blocks 1.5-3.1
-i3lock 2.14.1-1
-intel-ucode 20220510-1
-jack2 1.9.21-1
-kitty 0.25.2-1
-libtool 2.4.7-2
-libxft-bgra 2.3.4-1
-linux 5.18.8.artix1-1
-linux-firmware 20220610.7b71b75-1
-linux-headers 5.18.8.artix1-1
-m4 1.4.19-1
-make 4.3-3.1
-man-db 2.10.2-1
-minecraft-launcher 1:1.0.1221-1
-mpv 1:0.34.1-4.2
-nautilus 42.2-1
-neofetch 7.1.0-2
-neovim 0.7.2-3
-nerd-fonts-complete 2.1.0-8
-network-manager-applet 1.28.0-1
-networkmanager 1.38.2-1
-networkmanager-runit 20180226-3
-nodejs 18.4.0-1
-noto-fonts-emoji 20211101-1
-npm 8.12.0-1
-ntfs-3g 2022.5.17-1
-os-prober 1.80-1
-packer 1.8.2-1
-pacman 6.0.1-5
-patch 2.7.6-9.1
-pavucontrol 1:5.0+r35+g964f298-1
-picom 9.1-3
-pkgconf 1.8.0-1
-polkit 0.120-5
-pulseaudio 16.1-1
-pulseaudio-alsa 1:1.2.7.1-1
-ripgrep 13.0.0-2
-runit 2.1.2-29
-scrot 1.7-1
-sed 4.8-1.1
-sof-firmware 2.2-1
-spaceship-prompt-git v3.11.2.r386.ga5d5589-1
-sudo 1.9.11.p3-1
-terminus-font-ttf 4.49.1-1
-texinfo 6.8-2
-ttf-ms-fonts 2.0-12
-unzip 6.0-18
-vi 1:070224-5
-vim 9.0.0000-1
-vrms-arch 0.1.0.r25.g802c767-1
-which 2.21-5.1
-woeusb 5.2.4-1
-xclip 0.13-3.1
-xdg-user-dirs 0.17-3.2
-xdg-utils 1.1.3+21+g1a58bc2-1
-xf86-video-intel 1:2.99.917+916+g31486f40-2
-xf86-video-vesa 2.5.0-3
-xorg-bdftopcf 1.1-3
-xorg-font-util 1.3.2-3
-xorg-fonts-encodings 1.0.5-2.1
-xorg-iceauth 1.0.9-1
-xorg-mkfontscale 1.2.2-1.1
-xorg-server 21.1.3-7
-xorg-server-common 21.1.3-7
-xorg-server-devel 21.1.3-7
-xorg-server-xephyr 21.1.3-7
-xorg-server-xnest 21.1.3-7
-xorg-server-xvfb 21.1.3-7
-xorg-sessreg 1.1.2-3
-xorg-setxkbmap 1.3.3-1
-xorg-xauth 1.1.2-1
-xorg-xcursorgen 1.0.7-3
-xorg-xdpyinfo 1.3.3-4
-xorg-xev 1.2.4-1
-xorg-xhost 1.0.8-3
-xorg-xinit 1.4.1-3
-xorg-xinput 1.6.3-3
-xorg-xkbcomp 1.4.5-1
-xorg-xkill 1.0.5-3
-xorg-xmodmap 1.0.10-3
-xorg-xrandr 1.5.1-2.1
-xorg-xrdb 1.2.1-1
-xorg-xsetroot 1.1.2-3
-xorg-xwayland 22.1.2-1
-yay 11.1.2-1
-zathura 0.4.9-1
-zsh 5.9-1
-zsh-syntax-highlighting 0.7.1-1
+alsa-firmware
+alsa-utils
+alsa-utils-runit
+artix-archlinux-support
+autoconf
+automake
+base
+bear
+binutils
+bison
+bluez
+bluez-runit
+bluez-utils
+chromium
+clang
+cups
+cups-runit
+dmenu
+dosfstools
+dunst
+efibootmgr
+elogind-runit
+esysusers
+etmpfiles
+fakeroot
+feh
+file
+findutils
+firefox
+flex
+fontpreview
+gawk
+gcc
+gettext
+git
+go
+gopls
+grep
+groff
+grub
+gzip
+i3-gaps
+i3blocks
+intel-ucode
+kitty
+libtool
+libxft-bgra
+linux
+linux-firmware
+linux-headers
+m4
+make
+man-db
+mpv
+nautilus
+neovim
+nerd-fonts-complete
+network-manager-applet
+networkmanager
+networkmanager-runit
+nodejs
+noto-fonts-emoji
+npm
+ntfs-3g
+obs-studio
+pacman
+patch
+pavucontrol
+picom
+pkgconf
+pulseaudio
+pulseaudio-alsa
+pyright
+ripgrep
+runit
+scrot
+sed
+shellcheck
+sof-firmware
+spaceship-prompt
+sudo
+terminus-font-ttf
+texinfo
+vim
+which
+xclip
+xdg-user-dirs
+xdg-utils
+xf86-video-intel
+xf86-video-vesa
+xorg-bdftopcf
+xorg-font-util
+xorg-fonts-encodings
+xorg-iceauth
+xorg-mkfontscale
+xorg-server
+xorg-server-common
+xorg-server-devel
+xorg-server-xephyr
+xorg-server-xnest
+xorg-server-xvfb
+xorg-sessreg
+xorg-setxkbmap
+xorg-xauth
+xorg-xbacklight
+xorg-xcursorgen
+xorg-xdpyinfo
+xorg-xev
+xorg-xhost
+xorg-xinit
+xorg-xinput
+xorg-xkbcomp
+xorg-xkill
+xorg-xmodmap
+xorg-xrandr
+xorg-xrdb
+xorg-xrefresh
+xorg-xsetroot
+xorg-xwayland
+yay
+zathura
+zathura-pdf-mupdf
+zsh
+zsh-autosuggestions
+zsh-syntax-highlighting
