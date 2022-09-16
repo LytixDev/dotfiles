@@ -1,3 +1,4 @@
+-- uncomment these two lines when first downloading may fix some init issues with packer
 require('lualine').setup()
 require("nvim-tree").setup()
 

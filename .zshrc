@@ -7,6 +7,9 @@
 alias ls="ls --color=auto"
 alias grep="grep --color=auto"
 alias pacman="pacman --color=auto"
+alias diff="diff --color=auto"
+alias yay="yay --color=auto"
+
 alias flux="redshift -l 63:10"
 alias update="sudo pacman -Syyu"
 alias wttr="curl https://wttr.in"

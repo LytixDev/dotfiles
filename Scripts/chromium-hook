@@ -1,0 +1,5 @@
+#!/bin/sh
+rm -rf .config/chromium/Default
+chromium
+rm -rf .config/chromium/Default
+exit 0

@@ -1,0 +1,11 @@
+#!/bin/sh
+# Written by Nicolai H. Brand (lytix.dev) 2022
+# Used at 'Brage palasset'
+
+WALLPAPER_FOLDER="$HOME/Pictures/wallpapers/"
+DELAY=60
+
+while sleep $DELAY
+do
+    feh --bg-fill "$(find "$WALLPAPER_FOLDER" | shuf -n 1)"
+done

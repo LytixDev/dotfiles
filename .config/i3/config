@@ -73,7 +73,7 @@ $exnosup $term -n cmus
 # keybindings
 bindsym $mod+Return $exnosup $term
 bindsym $mod+b $exnosup firefox
-bindsym $mod+c $exnosup chromium
+bindsym $mod+c $exnosup $scriptdir/chromium-hook
 bindsym $mod+s $exnosup $scriptdir/screenshot
 bindsym Print $exnosup $scriptdir/screenshot
 bindsym $mod+q kill

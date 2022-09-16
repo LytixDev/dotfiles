@@ -1,0 +1,17 @@
+#!/bin/sh
+# Written by Nicolai H. Brand (lytix.dev) 2022
+# Startup script running on a raspberry pie 4 in our shared living room
+
+dunst &         # notification server
+compton &       # compositior
+
+if [ ! "$(pidof steamlink)" ]
+then
+    (steamlink &) &&
+    notify-send "Starting steamlink"
+fi
+
+if [ ! "$(pidof wshuffle_proc)" ]
+then
+    bash -c "exec -a wsuffle_proc wshuffle" 
+fi

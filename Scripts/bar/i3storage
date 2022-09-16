@@ -1,16 +1,14 @@
-#!/bin/bash
+#!/bin/sh
+# Written by Nicolai Brand (lytix.dev) 05.01.2022, 02.09.2022
 
-# Written by Nicolai Brand (lytix.dev) 05.01.2022
-main="/dev/nvme0n1p5"
-
+main="/dev/nvme0n1p2"
 data=$(df -h | grep $main)
 
 case $BLOCK_BUTTON in
     1)
-        info="mount,          total, used, free"
+        info="mount\t\ttotal\tused\tfree"
         notify-send "Storage" "$info\n$data"
         ;;
 esac
 
-echo $data | cut -d " " -f 5
-
+echo "$data" | cut -d " " -f 5
