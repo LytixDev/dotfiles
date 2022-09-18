@@ -1,9 +1,15 @@
 #!/bin/sh
 # Written by Nicolai H. Brand (lytix.dev) 2022
-# Startup script running on a raspberry pie 4 in our shared living room
+# Startup script running on a raspberry pi 4 in our shared living room
 
 dunst &         # notification server
 compton &       # compositior
+cec-cleint &    # communication with the TV through HDMI
+
+DEVICE_NUMBER=0
+
+# signal to turn on TV
+echo "on $DEVICE_NUMBER" | cec-cleint -s -d 1
 
 if [ ! "$(pidof steamlink)" ]
 then
