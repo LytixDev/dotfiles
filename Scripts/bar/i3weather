@@ -1,15 +1,21 @@
 #!/bin/sh
-cloudy="☁️"
-sunny_clear="☀️"
-snow="🌨"
-rain_shower="🌧"
-negative="❄️"
+# Written by Nicolai H. Brand 2021 - 2022
+CACHE_LOC="$HOME/.cache/bar-weather"
 
 case $BLOCK_BUTTON in
     1)
-        weather=$(curl -Ss 'https://wttr.in?0&T&Q')
-        notify-send "Weather" "$weather"
+        if [ -e "$CACHE_LOC" ]
+        then
+            notify-send "Weather" "$(cat "$CACHE_LOC")"
+        else
+            notify-send "Weather" "$(curl -Ss 'https://wttr.in?0&T&Q' | tee "$CACHE_LOC")"
+        fi
         ;;
 esac
 
-curl -Ss 'https://wttr.in?0&T&Q' | cut -c 16- | head -2 | awk "/.*[0-9]/" | sed "s/\s//g; s/(.*)//"
+if [ -e "$CACHE_LOC" ]
+then
+    cut "$CACHE_LOC" -c 16- | head -2 | awk "/.*[0-9]/" | sed "s/\s//g; s/(.*)//"
+else
+    curl -Ss 'https://wttr.in?0&T&Q' | tee "$CACHE_LOC" | cut -c 16- | head -2 | awk "/.*[0-9]/" | sed "s/\s//g; s/(.*)//"
+fi

@@ -5,4 +5,4 @@
 # running: xinput --list --short
 
 device_id=$(xinput --list --short | awk '/^.*TPPS/ {print $6}' | sed 's/id=//')
-xinput --set-prop $device_id "libinput Accel Speed" -0.5
+xinput --set-prop "$device_id" "libinput Accel Speed" -0.5

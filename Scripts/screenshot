@@ -1,13 +1,23 @@
 #!/bin/sh
-
 # Nicolai Brand (lytixdev) 2021-2022
 
-dir="$HOME/Pictures/screenshots"
+DIR="$HOME/Pictures/screenshots"
+NAME="$DIR/$(date +"%Y-%m-%d-%H%M%S").png"
+PID="nic_screenshot"
 
-mkdir -p $dir
-name="$dir/$(date +"%Y-%m-%d-%H%M%S").png"
+mkdir -p "$DIR"
 
-scrot -F $name #&& notify-send -t 1000 "Took screenshot succesfully"
-echo $name | xclip -selection "clipboard"
+if [ "$1" = "-a" ]
+then
+    # snipping tool-esque
+    bash -c "exec -a $PID gnome-screenshot -a -f $NAME"
+    # stupid wait for screenshot to be taken
+    while test -d /proc/$PID; do
+         sleep 0.2
+    done
+else
+    scrot -F "$NAME"
+fi
 
-#cd $dir && scrot && notify-send -t 1000 "Took screenshot succesfully" || notfy-send -t 1000 "Screenshot failed"
+notify-send -t 3000 "Took screenshot [$NAME] succesfully"
+echo "$NAME" | xclip -selection "clipboard"

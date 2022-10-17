@@ -34,3 +34,7 @@ vim.opt.numberwidth = 4
 --vim.opt.termguicolors = true
 vim.cmd [[set iskeyword+=-]]
 vim.opt.termguicolors = true;
+
+
+-- column on source code
+vim.cmd('set colorcolumn=100')
