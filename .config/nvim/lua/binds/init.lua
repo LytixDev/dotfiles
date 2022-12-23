@@ -7,7 +7,7 @@ vim.g.maplocalleader = " "
 keymap("", "<Space>", "<Nop>", opts)
 
 -- telescope & live_grep rebind
-vim.cmd('map <leader>f :Telescope find_files<cr>')
+vim.cmd('map <leader>d :Telescope find_files<cr>')
 vim.cmd('map <leader>g :Telescope live_grep<cr>')
 
 -- treat wrap as new line

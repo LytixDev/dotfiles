@@ -3,18 +3,18 @@
 
 DIR="$HOME/Pictures/screenshots"
 NAME="$DIR/$(date +"%Y-%m-%d-%H%M%S").png"
-PID="nic_screenshot"
 
 mkdir -p "$DIR"
 
 if [ "$1" = "-a" ]
 then
     # snipping tool-esque
-    bash -c "exec -a $PID gnome-screenshot -a -f $NAME"
+    gnome-screenshot -a -f "$NAME"
     # stupid wait for screenshot to be taken
-    while test -d /proc/$PID; do
-         sleep 0.2
-    done
+    #while test -d /proc/"$(pidof gnome-screenshot)"
+    #do
+    #     sleep 0.2
+    #done
 else
     scrot -F "$NAME"
 fi

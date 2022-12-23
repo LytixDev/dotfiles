@@ -47,7 +47,7 @@ case $choice in
     "extern4k")
 	HiDPI=1 &&
         xrandr | grep -q "$extern connected" &&
-	xrandr --output $extern --primary --mode 3840x2160 --pos 0x0 --rotate normal &&
+	xrandr --output "$extern" --primary --mode 3840x2160 --pos 0x0 --rotate normal &&
 	xrandr --output $intern --off &&
         notify-send "Error changing monitor config"
         ;;

@@ -88,3 +88,7 @@ git clone "https://github.com/lytixdev/dotfiles.git"
 
 # TODO: setup arch repos for artix
 # TODO: setup dotfiles
+
+# add user to docker group
+sudo groupadd docker
+sudo usermod -aG docker "$(whoami)"
