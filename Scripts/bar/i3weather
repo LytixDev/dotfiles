@@ -1,6 +1,6 @@
 #!/bin/sh
 # Written by Nicolai H. Brand 2021 - 2022
-CACHE_LOC="$HOME/tmp/bar-weather"
+CACHE_LOC="/tmp/bar-weather"
 
 case $BLOCK_BUTTON in
     1)

@@ -1,0 +1,6 @@
+#!/bin/sh
+DIR=$1
+wallpaper_loc="$HOME/Pictures/wallpapers/alt.jpg"
+
+cp "$(sxiv -o "$DIR")" "$wallpaper_loc"
+feh --bg-fill "$wallpaper_loc"
