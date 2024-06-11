@@ -16,7 +16,7 @@ then
     [ $exit_code -eq 1 ] && notify-send "$extern is not connected" && exit 0
 fi
 
-choice=$(printf "extern4k\nintern\nextern1080p+intern\nextern1440p+intern\nextern4k+intern\nmirror1080p\nextern1080p\nextern1440p\nsmart\n" | dmenu)
+choice=$(printf "extern1440p\nextern4k\nintern\nextern1080p+intern\nextern1440p+intern\nextern4k+intern\nmirror1080p\nextern1080p\nsmart\n" | dmenu)
 
 case $choice in
     "intern")

@@ -1,5 +1,5 @@
 #!/bin/env bash
 
 # Starts a new terminal instance from the same path as it's executed from
-
-coproc $TERMINAL -e "$SHELL" -c "cd $(pwd); zsh"
+# coproc $TERMINAL -e "$SHELL" -c "cd $(pwd); zsh"
+$TERMINAL &

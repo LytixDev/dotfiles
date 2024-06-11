@@ -1,7 +1,8 @@
 #!/bin/sh
 
 case $BLOCK_BUTTON in
-                1) notify-send -t 5000 "$(cal -n 3)" ;;
+                1) notify-send "Calendar" "$(gcal --with-week-number --starting-day=1 | sed 's/<\(.*\)>/ <u><b><i>\1<\/i><\/b><\/u> /g')" ;;
+                3) notify-send -t 10000 "Week number: $(date +%W)" ;;
 esac
 
 date | awk '/.*/ {print $3 "." $2 "("$1")"}'
