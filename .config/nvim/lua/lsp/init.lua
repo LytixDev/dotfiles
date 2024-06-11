@@ -5,6 +5,8 @@ require'lspconfig'.eslint.setup{}
 require'lspconfig'.html.setup{}
 require'lspconfig'.gopls.setup{}
 require'lspconfig'.hls.setup{}
+require'lspconfig'.zls.setup{}
+--require'lspconfig'.ols.setup{}
 
 -- https://neovim.io/doc/user/lsp.html
 -- Mappings.
@@ -35,7 +37,7 @@ end
 
 -- Use a loop to conveniently call 'setup' on multiple servers and
 -- map buffer local keybindings when the language server attaches
-local servers = { 'pyright', 'bashls', 'clangd', 'gopls' }
+local servers = { 'pyright', 'bashls', 'clangd', 'gopls', 'ols' }
 for _, lsp in pairs(servers) do
   require('lspconfig')[lsp].setup {
     on_attach = on_attach,

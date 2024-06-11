@@ -57,32 +57,34 @@ $exnosup nm-applet
 floating_modifier $mod
 
 # dropdown menus
-for_window [instance="dropdown"] floating enable
-for_window [instance="dropdown"] resize set 700 400
-for_window [instance="dropdown"] move scratchpad
-for_window [instance="dropdown"] border pixel 5
-$exnosup $term -n dropdown
+for_window [instance="bottom_scratch"] floating enable
+for_window [instance="bottom_scratch"] resize set 1200 300
+for_window [instance="bottom_scratch"] move scratchpad
+for_window [instance="bottom_scratch"] border pixel 5
+$exnosup $term -n bottom_scratch
 
-for_window [instance="cmus"] floating enable
-for_window [instance="cmus"] resize set 1000 600
-for_window [instance="cmus"] move scratchpad
-for_window [instance="cmus"] border pixel 5
-#$exnosup $term -n cmus -e cmus
-$exnosup $term -n cmus
+for_window [instance="mid_scratch"] floating enable
+for_window [instance="mid_scratch"] resize set 900 500
+for_window [instance="mid_scratch"] move scratchpad
+for_window [instance="mid_scratch"] border pixel 5
+$exnosup $term -n mid_scratch
 
 # keybindings
 bindsym $mod+Return $exnosup $term
 bindsym $mod+b $exnosup firefox
 bindsym $mod+c $exnosup $scriptdir/chromium-hook
-bindsym $mod+s $exnosup $scriptdir/screenshot
-bindsym Print $exnosup $scriptdir/screenshot
-bindsym Control+Print $exnosup $scriptdir/screenshot -a
+# bindsym $mod+s $exnosup $scriptdir/screenshot
+# bindsym Print $exnosup $scriptdir/screenshot
+
+bindsym Print $exnosup $scriptdir/take-screenshot.slash -b
+bindsym $mod+p $exnosup $scriptdir/take-screenshot.slash -a
+
 bindsym $mod+q kill
 bindsym $mod+d $exnosup i3-dmenu-desktop
 
-# dropdown menu
-bindsym $mod+t [instance="dropdown"] scratchpad show; [instance="dropdown"] move position 1170 750
-bindsym $mod+y [instance="cmus"] scratchpad show; [instance="cmus"] move position center
+# bottom_scratch menu
+bindsym $mod+t [instance="bottom_scratch"] scratchpad show; [instance="bottom_scratch"] move position 400 900
+bindsym $mod+y [instance="mid_scratch"] scratchpad show; [instance="mid_scratch"] move position center
 
 # change focus
 bindsym $mod+h focus left

@@ -1,7 +1,0 @@
-#!/bin/sh
-# Nicolai Brand (lytixdev) 2022
-
-sudo sv restart NetworkManager
-sudo sv restart bluetoothd
-bluetoothctl power on
-bluetoothctl scan on

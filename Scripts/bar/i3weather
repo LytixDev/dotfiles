@@ -1,21 +1,11 @@
 #!/bin/sh
-# Written by Nicolai H. Brand 2021 - 2022
-CACHE_LOC="/tmp/bar-weather"
+# Written by Nicolai H. Brand 2021 - 2024
 
 case $BLOCK_BUTTON in
     1)
-        if [ -e "$CACHE_LOC" ]
-        then
-            notify-send "Weather" "$(cat "$CACHE_LOC")"
-        else
             notify-send "Weather" "$(curl -Ss 'https://wttr.in?0&T&Q' | tee "$CACHE_LOC")"
-        fi
         ;;
 esac
 
-if [ -e "$CACHE_LOC" ]
-then
-    cut "$CACHE_LOC" -c 16- | head -2 | awk "/.*[0-9]/" | sed "s/\s//g; s/(.*)//"
-else
-    curl -Ss 'https://wttr.in?0&T&Q' | tee "$CACHE_LOC" | cut -c 16- | head -2 | awk "/.*[0-9]/" | sed "s/\s//g; s/(.*)//"
-fi
+#curl -Ss 'https://wttr.in?0&T&Q' | cut -c 16- | head -2 | awk "/.*[0-9]/" | sed "s/\s//g; s/(.*)//"
+slash "$HOME"/Scripts/eilor.slash

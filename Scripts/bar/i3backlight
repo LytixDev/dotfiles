@@ -1,6 +1,7 @@
 #!/bin/sh
+# Written by Nicolai Brand (lytix.dev) 2022
 
-#percent=$(xbacklight -get | cut -f1 -d".")"%"
+# percent=$(xbacklight -get | cut -f1 -d".")"%"
 
 # slightly faster than previous method where i define a variable
 # uses the stream editor to 'append' to the end of the stream by

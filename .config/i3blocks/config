@@ -1,29 +1,16 @@
 dir=/home/nic/Scripts/bar
 
-#[title]
-#align=left
-#command=$dir/i3title
-#interval=1
-#signal=40
-
-#[cursong]
-#command=$dir/i3current_song
-#interval=once
-#signal=20
-#label=🎵
-
-#[btcprice]
-#command=$dir/i3checkbtc
-#interval=once
-#signal=30
-#color=#4a704b
-#label=💰
+[title]
+align=left
+command=$dir/i3title
+interval=1
+signal=40
 
 [weather]
 command=$dir/i3weather
-interval=1800
+interval=901
 color=#548a8e
-label=🌅
+#label=🌅
 
 [cputemp]
 command=$dir/i3temp

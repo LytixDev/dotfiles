@@ -10,34 +10,32 @@ alias pacman="pacman --color=auto"
 alias diff="diff --color=auto"
 alias yay="yay --color=auto"
 
-alias flux="redshift -l 63:10"
-alias update="sudo pacman -Syyu"
 alias wttr="curl https://wttr.in"
-alias wttrtoday="curl v2d.wttr.in"
 alias v="nvim"
 alias untar="tar -xvzf"
 alias ymp3="youtube-dl -x --audio-format mp3 --prefer-ffmpeg"
-alias val="cd Documents/valery; ./build.sh && ./valery"
 alias clip='xclip -selection "clipboard"'
 alias halt="sudo halt"
 alias poweroff="sudo poweroff"
 alias reboot="sudo reboot"
 alias shutdown="sudo shutdown"
-alias zzz="sudo zzz"
 alias p="cd ~/Documents/projects/"
-alias pg="cd ~/Documents/programs/"
+alias yarndere="yarn prettier && yarn dev"
+alias hss="hugo server --noHTTPCache"
+alias idun="ssh nicolahb@idun-login1.hpc.ntnu.no"
 
 # path
 export PATH=$PATH:$HOME/Scripts
 
-export DEBUGINFOD_URLS="https://debuginfod.artixlinux.org"
+#export DEBUGINFOD_URLS="https://debuginfod.elfutils.org/"
+#export DEBUGINFOD_URLS="https://debuginfod.artixlinux.org/ https://debuginfod.elfutils.org/ https://debuginfod.archlinux.org"
 
 # enable colors
 autoload -U colors && colors
 
 # history in cache directory:
 HISTSIZE=1000
-SAVEHIST=1000
+SAVEHIST=10000
 HISTFILE=~/.cache/zsh/history
 
 # tab complete
