@@ -11,3 +11,4 @@ case $BLOCK_BUTTON in
         ;;
 esac
 
+echo "$data" | cut -d " " -f9

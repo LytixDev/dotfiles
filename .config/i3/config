@@ -2,7 +2,9 @@
 set $exnosup exec --no-startup-id
 set $exallnosup exec_always --no-startup-id
 set $scriptdir /home/nic/Scripts
-set $term st
+#set $term kitty
+#set $term st
+set $term ghostty
 
 # set mod key to windows key
 set $mod Mod4
@@ -61,13 +63,13 @@ for_window [instance="bottom_scratch"] floating enable
 for_window [instance="bottom_scratch"] resize set 1200 300
 for_window [instance="bottom_scratch"] move scratchpad
 for_window [instance="bottom_scratch"] border pixel 5
-$exnosup $term -n bottom_scratch
+$exnosup kitty --name bottom_scratch
 
 for_window [instance="mid_scratch"] floating enable
 for_window [instance="mid_scratch"] resize set 900 500
 for_window [instance="mid_scratch"] move scratchpad
 for_window [instance="mid_scratch"] border pixel 5
-$exnosup $term -n mid_scratch
+$exnosup kitty --name mid_scratch
 
 # keybindings
 bindsym $mod+Return $exnosup $term
@@ -187,7 +189,7 @@ mode "$mode_system" {
     bindsym l $exnosup bash $scriptdir/lock, mode "default"
     bindsym e $exnosup i3-msg exit, mode "default"
     bindsym r $exnosup sudo reboot, mode "default"
-    bindsym Ctrl+s $exnosup sudo poweroff, mode "default"
+    bindsym Ctrl+s $exnosup poweroff, mode "default"
     bindsym Escape mode "default"
 }
 
@@ -200,10 +202,10 @@ $exallnosup setxkbmap -layout no
 $exallnosup notify-send "Welcome back, Nicolai"
 
 # startup programs
-$exnosup picom
+#$exnosup picom
 #$exnosup cmus-listener > /dev/null
 $exnosup dunst
-$exallnosup $scriptdir/get-btc-price
+#$exallnosup $scriptdir/get-btc-price
 $exnosup $scriptdir/setmonitors -s
 
 # gaps
@@ -247,4 +249,6 @@ bindsym $mod+Ctrl+g		gaps inner all set 0; gaps outer all set 0
 bindsym $mod+Ctrl+0		gaps inner all set 18; gaps outer all set 5
 
 # meme
-bindsym Control+Mod1+Delete exec mpv --fullscreen $HOME/Desktop/videos/rick_roll.webm
+#bindsym Control+Mod1+Delete exec mpv --fullscreen $HOME/Desktop/videos/rick_roll.webm
+bindsym $mod+s $exnosup st
+

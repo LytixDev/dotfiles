@@ -1,4 +1,4 @@
-# chad zshrc
+# lytx.dev .zshrc config 2021 - 2025
 
 # if not running interactively, don't do anything
 [[ $- != *i* ]] && return
@@ -10,10 +10,10 @@ alias pacman="pacman --color=auto"
 alias diff="diff --color=auto"
 alias yay="yay --color=auto"
 
+alias lf="lfub"
 alias wttr="curl https://wttr.in"
 alias v="nvim"
 alias untar="tar -xvzf"
-alias ymp3="youtube-dl -x --audio-format mp3 --prefer-ffmpeg"
 alias clip='xclip -selection "clipboard"'
 alias halt="sudo halt"
 alias poweroff="sudo poweroff"
@@ -22,13 +22,12 @@ alias shutdown="sudo shutdown"
 alias p="cd ~/Documents/projects/"
 alias yarndere="yarn prettier && yarn dev"
 alias hss="hugo server --noHTTPCache"
-alias idun="ssh nicolahb@idun-login1.hpc.ntnu.no"
+alias sxiv="nsxiv"
+
 
 # path
 export PATH=$PATH:$HOME/Scripts
-
-#export DEBUGINFOD_URLS="https://debuginfod.elfutils.org/"
-#export DEBUGINFOD_URLS="https://debuginfod.artixlinux.org/ https://debuginfod.elfutils.org/ https://debuginfod.archlinux.org"
+export PATH=$PATH:$HOME/.local/bin
 
 # enable colors
 autoload -U colors && colors
@@ -147,3 +146,6 @@ SPACESHIP_JOBS_SHOW=false
 
 # syntax highlight
 source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+
+source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
+ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=#50493e,bold" 

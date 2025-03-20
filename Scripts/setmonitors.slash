@@ -1,0 +1,70 @@
+#!/usr/local/bin/slash
+
+var HIDPI_CUTOFF = 2560
+var hidpi_mode = false
+
+
+var get_resolutions = func display_name {
+    var search_str = $display_name + " connected"
+    var out = (xrandr | grep -A 15 $search_str | tail -n +2)
+
+    var resolutions = "off\n"
+
+    var old_ifs = $IFS
+    $IFS = "\n"
+
+    loop line in $out {
+        if $line[0] != " " {
+            break
+        }
+        $resolutions += (echo $line | awk "{ print $1 }") + "\n"
+    }
+
+    $IFS = $old_ifs
+    return $resolutions
+}
+
+var default = func {
+    var monitors = (xrandr | grep " connected" | awk "{ print $1 }")
+    if ("eDP1" in $monitors) and ("HDMI1" in $monitors) {
+        xrandr --output "eDP1" --off &&
+        xrandr --output "HDMI1" --mode "2560x1440" --primary &&
+        return 0
+    }
+    return 1
+}
+
+# main
+
+if (echo "default\nmanual" | dmenu -r -p "Chose monitor config mode") == "default" {
+    if $default() == 0 {
+        notify-send "Successfully configured monitors with default settings."
+        exit 0
+    } else {
+        notify-send "Could not use default monitor settings. Forcing manual."
+    }
+}
+
+var monitors = (xrandr | grep " connected" | awk "{ print $1 }")
+var chosen_res = []
+loop monitor in $monitors {
+    var resolutions = $get_resolutions($monitor)
+    var prompt = "Resolution for " + $monitor
+    $chosen_res += [(echo $resolutions | dmenu -r -p $prompt)]
+}
+
+# loop monitor, chosen_res in $monitors, chosen_res {
+#     $monitor
+#     $chosen_res
+# }
+var i = 0
+
+loop monitor in $monitors {
+    var chosen = $chosen_res[$i]
+    if $chosen == "off" {
+        xrandr --output $monitor --off
+    } else {
+        xrandr --output $monitor --mode $chosen
+    }
+    $i += 1
+}
