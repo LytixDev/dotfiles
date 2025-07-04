@@ -1,4 +1,4 @@
-*.font:	Terminus (TTF):style=Medium:pixelsize=22:autohint=true;
+*.font:	Terminus (TTF):pixelsize=22:autohint=true;
 *.alpha: 0.95
 
 Xft.dpi: 95

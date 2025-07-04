@@ -24,6 +24,7 @@ alias yarndere="yarn prettier && yarn dev"
 alias hss="hugo server --noHTTPCache"
 alias sxiv="nsxiv"
 
+DOTTIE=~/Documents/projects/personal/dotfiles/
 
 # path
 export PATH=$PATH:$HOME/Scripts
